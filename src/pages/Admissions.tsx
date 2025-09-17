@@ -40,8 +40,8 @@ function Admissions() {
       <section className="relative py-20 bg-cover bg-center bg-no-repeat min-h-[70vh] flex items-center"
                style={{ backgroundImage: `url(${Admissions_img})` }}>
         <div 
-          className="absolute inset-0 bg-primary transition-opacity duration-300"
-          style={{ opacity: scrollOpacity }}
+          className="absolute inset-0 bg-black transition-opacity duration-300"
+          style={{ opacity: Math.max(scrollOpacity, 0.4) }}
         />
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins drop-shadow-lg">
