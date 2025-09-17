@@ -2,8 +2,22 @@
 import { Calendar, Users, Phone, MapPin, CheckCircle, Clock, AlertCircle } from 'lucide-react'
 import { Link } from 'react-router'
 import Admissions_img from '../assets/admissions.webp'
+import { useState, useEffect } from 'react'
 
 function Admissions() {
+  const [scrollOpacity, setScrollOpacity] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const Y = window.scrollY;
+      setScrollOpacity(Math.min(Y / 300, 0.8));
+    };
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const timeline = [
     { month: "Enero - Febrero", activity: "Inscripciones abiertas", status: "active" },
     { month: "Marzo", activity: "Pruebas de conocimiento", status: "upcoming" },
@@ -13,7 +27,7 @@ function Admissions() {
 
   const requirements = [
     "Fotocopia del registro civil",
-    "Últimos boletines académicos",
+    "Últimos boletines académicos",  
     "Certificado médico actualizado",
     "Carta de retiro del colegio anterior",
     "Formulario de inscripción diligenciado",
@@ -22,19 +36,18 @@ function Admissions() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent">
-        <img
-          src={Admissions_img}
-          alt="Nosotross"
-          className="w-full h-[clamp(280px,50vh,640px)] object-cover object-center"
+      {/* Hero Section with scroll transparency */}
+      <section className="relative py-20 bg-cover bg-center bg-no-repeat min-h-[70vh] flex items-center"
+               style={{ backgroundImage: `url(${Admissions_img})` }}>
+        <div 
+          className="absolute inset-0 bg-primary transition-opacity duration-300"
+          style={{ opacity: scrollOpacity }}
         />
-
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center text-white px-4 mb-12">
-          <h1 className="text-4xl md:text-6xl text-base-100 font-bold font-poppins mb-6 animate-fade-in">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins drop-shadow-lg">
             Admisiones
           </h1>
-          <p className="text-xl md:text-2xl font-b mb-8 leading-relaxed">
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto drop-shadow-md">
             Conoce nuestro proceso de admisión y cómo formar parte de la familia Gimnasio El Paraíso.
           </p>
         </div>

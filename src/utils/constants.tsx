@@ -1,4 +1,4 @@
-import { Presentation } from "lucide-react"
+
 
 export const CONTACT_INFO = {
     phone: '+57 3014312924',

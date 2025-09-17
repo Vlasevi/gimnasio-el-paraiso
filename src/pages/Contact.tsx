@@ -1,17 +1,37 @@
 
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react'
 import { SCHOOL_INFO, CONTACT_INFO } from '../utils/constants'
+import { useState, useEffect } from 'react'
+import ContactImage from '../assets/us/home4.jpg'
 
 function Contact() {
+  const [scrollOpacity, setScrollOpacity] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const Y = window.scrollY;
+      setScrollOpacity(Math.min(Y / 300, 0.8));
+    };
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary to-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins">
+      <section className="relative py-20 bg-cover bg-center bg-no-repeat min-h-[70vh] flex items-center"
+               style={{ backgroundImage: `url(${ContactImage})` }}>
+        <div 
+          className="absolute inset-0 bg-primary transition-opacity duration-300"
+          style={{ opacity: scrollOpacity }}
+        />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins drop-shadow-lg">
             Contacto
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto drop-shadow-md">
             Estamos aquí para resolver todas tus dudas y acompañarte en el proceso educativo
           </p>
         </div>

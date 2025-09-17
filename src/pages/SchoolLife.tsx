@@ -1,32 +1,57 @@
 
 import { Calendar, Camera, Trophy, Star, Heart, Users } from 'lucide-react'
+import { useState, useEffect } from 'react'
+
+// Importar imágenes de momentos
+import Moments1 from '../assets/moments/acc1.jpg';
+import Moments2 from '../assets/moments/acc2.jpg';
+import Moments3 from '../assets/moments/acc3.jpg';
+import Moments4 from '../assets/moments/acc4.jpg';
+import Moments5 from '../assets/moments/acc5.jpg';
+import Moments6 from '../assets/moments/acc6.jpg';
+import Moments7 from '../assets/moments/acc7.jpg';
+import Moments8 from '../assets/moments/acc8.jpg';
+import Moments9 from '../assets/moments/acc9.jpg';
 
 function SchoolLife() {
+  const [scrollOpacity, setScrollOpacity] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const Y = window.scrollY;
+      setScrollOpacity(Math.min(Y / 300, 0.8));
+    };
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const years = [
-    { grade: "Preescolar", image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3", description: "Primeros pasos en el aprendizaje" },
-    { grade: "1º - 3º Primaria", image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3", description: "Explorando el mundo del conocimiento" },
-    { grade: "4º - 5º Primaria", image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3", description: "Desarrollando habilidades críticas" },
-    { grade: "6º - 8º Bachillerato", image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3", description: "Formación integral y valores" },
-    { grade: "9º - 11º Bachillerato", image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3", description: "Preparación para el futuro" }
+    { grade: "Preescolar", image: Moments1, description: "Primeros pasos en el aprendizaje" },
+    { grade: "1º - 3º Primaria", image: Moments2, description: "Explorando el mundo del conocimiento" },
+    { grade: "4º - 5º Primaria", image: Moments3, description: "Desarrollando habilidades críticas" },
+    { grade: "6º - 8º Bachillerato", image: Moments4, description: "Formación integral y valores" },
+    { grade: "9º - 11º Bachillerato", image: Moments5, description: "Preparación para el futuro" }
   ]
 
   const news = [
     {
       title: "Festival de Ciencias 2024",
       date: "15 de Noviembre, 2024",
-      image: "https://images.unsplash.com/photo-1581726690015-c9861b288a6b?ixlib=rb-4.0.3",
+      image: Moments6,
       summary: "Nuestros estudiantes presentaron proyectos innovadores en el festival anual de ciencias."
     },
     {
       title: "Intercambio Cultural Francia",
-      date: "8 de Octubre, 2024",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3",
+      date: "8 de Octubre, 2024", 
+      image: Moments7,
       summary: "Estudiantes de 10º grado participaron en un intercambio cultural con Francia."
     },
     {
       title: "Campeonato Deportivo Regional",
       date: "22 de Septiembre, 2024",
-      image: "https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3",
+      image: Moments8,
       summary: "Nuestro equipo de fútbol se coronó campeón regional en la categoría juvenil."
     }
   ]
@@ -36,31 +61,36 @@ function SchoolLife() {
       name: "Ana María Gómez",
       role: "Madre de familia",
       text: "El Gimnasio el Paraíso ha sido fundamental en el desarrollo de mi hija. Los valores y la excelencia académica se reflejan en cada actividad.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3"
+      image: Moments9
     },
     {
       name: "Carlos Rodríguez",
       role: "Egresado 2020",
       text: "La formación integral que recibí me preparó no solo académicamente, sino como persona. Hoy estoy en la universidad con bases sólidas.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3"
+      image: Moments1
     },
     {
       name: "Patricia López",
       role: "Docente",
       text: "Trabajar aquí es una experiencia enriquecedora. El ambiente educativo permite desarrollar metodologías innovadoras y ver crecer a los estudiantes.",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3"
+      image: Moments2
     }
   ]
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary to-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins">
+      {/* Hero Section with scroll transparency */}
+      <section className="relative py-20 bg-cover bg-center bg-no-repeat min-h-[70vh] flex items-center"
+               style={{ backgroundImage: `url(${Moments3})` }}>
+        <div 
+          className="absolute inset-0 bg-primary transition-opacity duration-300"
+          style={{ opacity: scrollOpacity }}
+        />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins drop-shadow-lg">
             Vida Escolar
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto drop-shadow-md">
             Momentos especiales, aprendizajes significativos y experiencias que marcan la diferencia
           </p>
         </div>

@@ -6,7 +6,9 @@ function Layout({children}: { children: React.ReactNode }) {
   return (
     <>
     <Header/>
-    {children}
+    <div className="page-enter-active">
+      {children}
+    </div>
     <Footer/>
     </>
   )
