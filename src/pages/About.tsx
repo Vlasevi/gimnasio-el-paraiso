@@ -48,6 +48,7 @@ function About() {
           alt="Nosotross"
           className="block max-w-full h-auto object-contain mx-auto"
         />
+        <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center text-white px-4 mb-12">
           <h1 className="text-4xl md:text-6xl text-base-100 font-bold font-poppins mb-6 animate-fade-in">
