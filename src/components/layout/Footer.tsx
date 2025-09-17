@@ -2,6 +2,8 @@
 import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube } from 'lucide-react'
 import { Link } from 'react-router'
 import logo from '../../assets/logo.png'
+import { SCHOOL_INFO } from '../../utils/constants'
+import { CONTACT_INFO } from '../../utils/constants'
 
 function Footer() {
   return (
@@ -14,12 +16,11 @@ function Footer() {
               <img src={logo} alt="Gimnasio el Paraíso" className="w-16 h-16" />
               <div>
                 <h3 className="text-xl font-bold font-poppins">Gimnasio el Paraíso</h3>
-                <p className="text-base-100/80">Educación de calidad desde 1985</p>
+                <p className="text-base-100/80">Educación de calidad desde {SCHOOL_INFO.founded}</p>
               </div>
             </div>
             <p className="text-base-100/90 leading-relaxed mb-4">
-              Formamos líderes íntegros con excelencia académica, valores humanos y responsabilidad social, 
-              preparándolos para los desafíos del siglo XXI.
+              Formamos seres húmano íntegros con excelencia académica, valores humanos y responsabilidad social.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-base-100/80 hover:text-accent transition-colors">
@@ -52,19 +53,19 @@ function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0" />
-                <p className="text-base-100/90 text-sm">Calle 123 #45-67, Bogotá, Colombia</p>
+                <p className="text-base-100/90 text-sm">{CONTACT_INFO.adress}</p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
-                <p className="text-base-100/90 text-sm">+57 (1) 234-5678</p>
+                <p className="text-base-100/90 text-sm">{CONTACT_INFO.whatsapp}</p>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0" />
-                <p className="text-base-100/90 text-sm">info@gimnasioelaraiso.edu.co</p>
+                <p className="text-base-100/90 text-sm">{CONTACT_INFO.email}</p>
               </div>
               <div className="flex items-center gap-3">
                 <Clock className="w-5 h-5 text-accent flex-shrink-0" />
-                <p className="text-base-100/90 text-sm">Lun - Vie: 7:00 AM - 4:00 PM</p>
+                <p className="text-base-100/90 text-sm">{SCHOOL_INFO.working_hours}</p>
               </div>
             </div>
           </div>
@@ -72,7 +73,7 @@ function Footer() {
 
         <div className="border-t border-white/10 mt-8 pt-6 text-center">
           <p className="text-base-100/80 text-sm">
-            © 2024 Gimnasio el Paraíso. Todos los derechos reservados.
+            2025 Gimnasio el Paraíso. Todos los derechos reservados. {/*PENDIENTE COLOCAR AÑO ACTUAL*/}
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 
 import { Calendar, Users, Phone, MapPin, CheckCircle, Clock, AlertCircle } from 'lucide-react'
 import { Link } from 'react-router'
+import Admissions_img from '../assets/admissions.webp'
 
 function Admissions() {
   const timeline = [
@@ -22,13 +23,19 @@ function Admissions() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary to-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins">
+      <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent">
+        <img
+          src={Admissions_img}
+          alt="Nosotross"
+          className="w-full h-[clamp(280px,50vh,640px)] object-cover object-center"
+        />
+
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center text-white px-4 mb-12">
+          <h1 className="text-4xl md:text-6xl text-base-100 font-bold font-poppins mb-6 animate-fade-in">
             Admisiones
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-            Te acompañamos en el proceso para que tu hijo forme parte de nuestra familia educativa
+          <p className="text-xl md:text-2xl font-b mb-8 leading-relaxed">
+            Conoce nuestro proceso de admisión y cómo formar parte de la familia Gimnasio El Paraíso.
           </p>
         </div>
       </section>

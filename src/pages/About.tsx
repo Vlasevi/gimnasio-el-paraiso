@@ -1,44 +1,60 @@
 
 import { Award, Target, Eye, Heart, Users, BookOpen, Calendar } from 'lucide-react'
+import { SCHOOL_INFO } from '../utils/constants';
+import Nosotros from '../assets/home.jpg';
+
+function ObtenerAñoActual() {
+  const añoActual = new Date().getFullYear();
+
+  return (
+  añoActual
+  );
+}
 
 function About() {
   const leaders = [
     {
-      name: "María Elena Rodríguez",
+      name: "Vilma Pacheco Díaz",
       position: "Rectora",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3",
-      description: "Magíster en Educación con 25 años de experiencia en dirección académica."
+      image: "",
+      description: "Psicopedagoga con ------."
     },
     {
-      name: "Carlos Alberto Martínez",
-      position: "Coordinador Académico",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3",
-      description: "Especialista en Pedagogía y Currículo con énfasis en innovación educativa."
+      name: "Angela Anaya Pacheco",
+      position: "Vicerrectora Académica",
+      image: "",
+      description: "Ingeniera Electrica con Maestría en"
     },
     {
-      name: "Ana Patricia González",
-      position: "Coordinadora de Convivencia",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3",
-      description: "Psicóloga educativa especializada en desarrollo socioemocional."
+      name: "Aa",
+      position: "Aa",
+      image: "",
+      description: ""
     },
     {
-      name: "Jorge Luis Herrera",
-      position: "Coordinador de Preescolar",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3",
-      description: "Licenciado en Educación Preescolar con 15 años de experiencia."
+      name: "Aa",
+      position: "Aa",
+      image: "",
+      description: ""
     }
   ]
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-primary to-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins">
+      <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent">
+        <img
+          src={Nosotros}
+          alt="Nosotross"
+          className="block max-w-full h-auto object-contain mx-auto"
+        />
+
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center text-white px-4 mb-12">
+          <h1 className="text-4xl md:text-6xl text-base-100 font-bold font-poppins mb-6 animate-fade-in">
             Nosotros
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-            Conoce la historia, misión y equipo que hace posible la excelencia educativa en el Gimnasio el Paraíso
+          <p className="text-xl md:text-2xl font-b mb-8 leading-relaxed">
+            Un vistazo más de cerca a nuestra historia, valores y equipo de trabajo.
           </p>
         </div>
       </section>
@@ -49,41 +65,32 @@ function About() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-poppins">
-                Nuestra Historia
+                Presentación
               </h2>
               <div className="space-y-6">
                 <p className="text-lg leading-relaxed text-neutral">
-                  El Gimnasio el Paraíso fue fundado en 1985 por un grupo de educadores visionarios 
-                  que soñaban con crear una institución educativa que formara no solo estudiantes 
-                  académicamente excelentes, sino también ciudadanos íntegros y comprometidos con su sociedad.
-                </p>
+                  {SCHOOL_INFO.presentation1}
+                </p> 
                 <p className="text-lg leading-relaxed text-neutral">
-                  Durante casi cuatro décadas, hemos mantenido nuestro compromiso con la calidad educativa, 
-                  adaptándonos a los cambios del mundo moderno sin perder de vista nuestros valores fundacionales: 
-                  respeto, responsabilidad, honestidad y excelencia.
-                </p>
-                <p className="text-lg leading-relaxed text-neutral">
-                  Hoy, más de 3,000 egresados dan testimonio de la sólida formación recibida en nuestras aulas, 
-                  destacándose en universidades nacionales e internacionales y contribuyendo positivamente 
-                  al desarrollo de nuestro país.
+                  {SCHOOL_INFO.presentation2}
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-base-200 p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-primary mb-2">39</div>
+                <div className="text-3xl font-bold text-primary mb-2">{ObtenerAñoActual()-SCHOOL_INFO.founded}</div>
                 <div className="text-sm text-neutral">Años de experiencia</div>
               </div>
               <div className="bg-base-200 p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-primary mb-2">3000+</div>
-                <div className="text-sm text-neutral">Egresados exitosos</div>
+                <div className="text-3xl font-bold text-primary mb-2">11</div>
+                <div className="text-sm text-neutral">Aa</div>
               </div>
               <div className="bg-base-200 p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-primary mb-2">850</div>
+                <div className="text-3xl font-bold text-primary mb-2">150?</div>
                 <div className="text-sm text-neutral">Estudiantes actuales</div>
               </div>
               <div className="bg-base-200 p-6 rounded-lg text-center">
-                <div className="text-3xl font-bold text-primary mb-2">65</div>
+                <div className="text-3xl font-bold text-primary mb-2">10?</div>
                 <div className="text-sm text-neutral">Docentes calificados</div>
               </div>
             </div>
@@ -97,17 +104,18 @@ function About() {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
             Horizonte Institucional
           </h2>
+          <p className="mt-4 text-lg leading-relaxed text-neutral">
+              {SCHOOL_INFO.horizonte}
+          </p>
           
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="mt-8 grid lg:grid-cols-3 gap-8">
             {/* Misión */}
             <div className="card bg-white shadow-xl">
               <div className="card-body text-center">
                 <Target className="w-16 h-16 text-accent mx-auto mb-4" />
                 <h3 className="card-title justify-center text-primary mb-4 text-2xl">Misión</h3>
                 <p className="text-neutral leading-relaxed">
-                  Formar estudiantes íntegros, críticos y competentes mediante una educación de calidad 
-                  que desarrolle sus potencialidades académicas, sociales y emocionales, preparándolos 
-                  para ser ciudadanos responsables y líderes transformadores de la sociedad.
+                  {SCHOOL_INFO.mision}
                 </p>
               </div>
             </div>
@@ -118,9 +126,7 @@ function About() {
                 <Eye className="w-16 h-16 text-accent mx-auto mb-4" />
                 <h3 className="card-title justify-center text-primary mb-4 text-2xl">Visión</h3>
                 <p className="text-neutral leading-relaxed">
-                  Ser reconocidos como una institución educativa líder en formación integral, 
-                  innovación pedagógica y excelencia académica, que contribuya significativamente 
-                  al desarrollo social y cultural de Colombia para el año 2030.
+                  {SCHOOL_INFO.vision}
                 </p>
               </div>
             </div>
@@ -130,14 +136,14 @@ function About() {
               <div className="card-body text-center">
                 <Heart className="w-16 h-16 text-accent mx-auto mb-4" />
                 <h3 className="card-title justify-center text-primary mb-4 text-2xl">Valores</h3>
-                <ul className="text-left text-neutral space-y-2">
+                <ul className="text-left text-neutral space-y-2 grid grid-cols-2">
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
-                    Respeto y tolerancia
+                    Fé
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
-                    Responsabilidad
+                    Sabiduría
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
@@ -145,11 +151,43 @@ function About() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
-                    Excelencia
+                    Esperanza
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
                     Solidaridad
+                  </li>
+                                    <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Honestidad
+                  </li>
+                                    <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Justicia
+                  </li>
+                                    <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Autonomía
+                  </li>
+                                    <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Integralidad
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Respeto
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Responsabilidad
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Tolerancia
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Justicia
                   </li>
                 </ul>
               </div>
@@ -271,7 +309,7 @@ function About() {
               <Award className="w-16 h-16 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-3">Excelencia Académica</h3>
               <p className="text-white/90">
-                Reconocimiento del Ministerio de Educación por resultados sobresalientes en Pruebas Saber 11.
+                Aa
               </p>
             </div>
             
@@ -279,7 +317,7 @@ function About() {
               <Users className="w-16 h-16 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-3">Convivencia Escolar</h3>
               <p className="text-white/90">
-                Institución modelo en programas de convivencia pacífica y resolución de conflictos.
+                Aa
               </p>
             </div>
             
@@ -287,7 +325,7 @@ function About() {
               <Calendar className="w-16 h-16 text-accent mx-auto mb-4" />
               <h3 className="text-xl font-bold text-white mb-3">Innovación Educativa</h3>
               <p className="text-white/90">
-                Premiados por la implementación de metodologías pedagógicas innovadoras y uso de tecnología.
+                Aa
               </p>
             </div>
           </div>

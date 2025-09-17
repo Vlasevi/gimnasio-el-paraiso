@@ -1,5 +1,6 @@
 
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react'
+import { SCHOOL_INFO, CONTACT_INFO } from '../utils/constants'
 
 function Contact() {
   return (
@@ -52,13 +53,13 @@ function Contact() {
                     <label className="label">
                       <span className="label-text font-semibold">Asunto</span>
                     </label>
-                    <select className="select select-bordered focus:select-primary">
-                      <option disabled selected>Selecciona un tema</option>
-                      <option>Información general</option>
-                      <option>Proceso de admisiones</option>
-                      <option>Costos y becas</option>
-                      <option>Agendar visita</option>
-                      <option>Otro</option>
+                    <select className="select select-bordered focus:select-primary" defaultValue="">
+                      <option disabled value="">Selecciona un tema</option>
+                      <option value="informacion-general">Información general</option>
+                      <option value="admisiones">Proceso de admisiones</option>
+                      <option value="costos-becas">Costos y becas</option>
+                      <option value="visita">Agendar visita</option>
+                      <option value="otro">Otro</option>
                     </select>
                   </div>
 
@@ -96,9 +97,7 @@ function Contact() {
                       <div>
                         <h3 className="font-semibold mb-1">Dirección</h3>
                         <p className="text-white/90">
-                          Calle 123 #45-67<br />
-                          Barrio El Paraíso<br />
-                          Bogotá, Colombia
+                          {CONTACT_INFO.adress}
                         </p>
                       </div>
                     </div>
@@ -108,9 +107,7 @@ function Contact() {
                       <div>
                         <h3 className="font-semibold mb-1">Teléfonos</h3>
                         <p className="text-white/90">
-                          Principal: +57 (1) 234-5678<br />
-                          Admisiones: +57 (1) 234-5679<br />
-                          WhatsApp: +57 300 123 4567
+                          Principal: {CONTACT_INFO.phone}<br />
                         </p>
                       </div>
                     </div>
@@ -118,11 +115,9 @@ function Contact() {
                     <div className="flex items-start gap-4">
                       <Mail className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                       <div>
-                        <h3 className="font-semibold mb-1">Correos Electrónicos</h3>
+                        <h3 className="font-semibold mb-1">Correo Electrónico</h3>
                         <p className="text-white/90">
-                          General: info@gimnasioelaraiso.edu.co<br />
-                          Admisiones: admisiones@gimnasioelaraiso.edu.co<br />
-                          Académico: academico@gimnasioelaraiso.edu.co
+                          Información: {CONTACT_INFO.email}<br />
                         </p>
                       </div>
                     </div>
@@ -132,9 +127,7 @@ function Contact() {
                       <div>
                         <h3 className="font-semibold mb-1">Horarios de Atención</h3>
                         <p className="text-white/90">
-                          Lunes a Viernes: 7:00 AM - 4:00 PM<br />
-                          Sábados: 8:00 AM - 12:00 PM<br />
-                          Domingos: Cerrado
+                          {SCHOOL_INFO.working_hours}
                         </p>
                       </div>
                     </div>
@@ -143,7 +136,7 @@ function Contact() {
               </div>
 
               {/* WhatsApp Contact */}
-              <div className="card bg-accent text-white shadow-xl">
+              <div className="card bg-primary text-white shadow-xl">
                 <div className="card-body text-center">
                   <MessageCircle className="w-16 h-16 mx-auto mb-4" />
                   <h3 className="card-title justify-center text-2xl mb-4">¿Necesitas respuesta inmediata?</h3>
@@ -153,8 +146,8 @@ function Contact() {
                   <a href="https://wa.me/573001234567" 
                      target="_blank" 
                      rel="noopener noreferrer"
-                     className="btn btn-primary btn-lg">
-                    <MessageCircle className="w-5 h-5" />
+                     className="btn btn-accent btn-lg text-base-100">
+                    <MessageCircle className="w-5 h-5 text-b" />
                     Escribir por WhatsApp
                   </a>
                 </div>
@@ -171,12 +164,12 @@ function Contact() {
             Nuestra Ubicación
           </h2>
           
-          <div className="grid lg:grid-cols-3 gap-8 items-center">
+          <div className="gap-8 items-center">
             <div className="lg:col-span-2">
               <div className="card bg-white shadow-xl overflow-hidden">
                 <figure className="h-96">
                   <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8159871494777!2d-74.08618362574626!3d4.608883595393847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f99bfd2a459a9%3A0x352a30ac62b1f312!2sBogot%C3%A1%2C%20Colombia!5e0!3m2!1ses!2sco!4v1703123456789!5m2!1ses!2sco"
+                    src={SCHOOL_INFO.maps}
                     width="100%" 
                     height="100%" 
                     style={{ border: 0 }}
@@ -186,40 +179,6 @@ function Contact() {
                     title="Ubicación Gimnasio el Paraíso">
                   </iframe>
                 </figure>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <div className="card bg-white shadow-lg">
-                <div className="card-body text-center">
-                  <h3 className="card-title justify-center text-primary mb-4">Cómo Llegar</h3>
-                  <div className="space-y-3 text-left">
-                    <div className="flex items-center gap-3">
-                      <span className="badge badge-primary">Bus</span>
-                      <span className="text-sm">Rutas 15, 20A, 34B</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="badge badge-accent">TransMilenio</span>
-                      <span className="text-sm">Estación El Paraíso</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="badge badge-info">Metro</span>
-                      <span className="text-sm">Línea 1 - Estación Universidad</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card bg-info text-white shadow-lg">
-                <div className="card-body text-center">
-                  <h3 className="card-title justify-center mb-4">Parqueadero</h3>
-                  <p className="text-sm mb-4">
-                    Contamos con parqueadero gratuito para visitantes durante reuniones y eventos especiales.
-                  </p>
-                  <p className="text-xs opacity-90">
-                    Capacidad limitada - Se recomienda confirmar disponibilidad
-                  </p>
-                </div>
               </div>
             </div>
           </div>

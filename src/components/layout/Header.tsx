@@ -1,18 +1,38 @@
 import logo from '../../assets/logo.png'
 import { Link } from 'react-router'
 import { User, Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 
-function Header() {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const [opacity, setOpacity] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const Y = window.scrollY;
+      setOpacity(Math.min(Y / 300, 1));
+  };
+    
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // Initialize opacity on mount
+    return() => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const isSolid = opacity > 0.99;
+  const changeTextColor = opacity > 0.5;
+
   return (
     <>
-      <nav className="navbar bg-primary shadow-lg sticky top-0 z-50">
+      <nav className={`navbar fixed top-0 z-50 h-16 backdrop-blur-[2px] transition-colors duration-300 ${
+        isSolid ? "shadow-md" : ""
+      } bg-primary`}
+      style={{ ["--tw-bg-opacity" as any]: opacity }}
+      >
         <div className="navbar-start">
           <Link to='/' className="flex items-center">
             <img src={logo} alt="Escudo Gimnasio el Paraíso" className="w-12 h-12 md:w-16 md:h-16" />
@@ -21,7 +41,7 @@ function Header() {
         
         {/* Desktop Menu */}
         <div className='navbar-center hidden lg:flex'>
-          <ul className='menu menu-horizontal text-base-100 font-poppins font-semibold'>
+          <ul className={`menu menu-horizontal font-poppins font-semibold ${changeTextColor ? "text-base-100" : "text-base-100"}`}>
             <li>
               <Link to='/' className='hover:text-accent transition-colors px-4'>Inicio</Link>
             </li>
@@ -82,6 +102,3 @@ function Header() {
     </>
   )
 }
-
-
-export default Header
