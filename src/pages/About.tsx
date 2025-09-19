@@ -141,7 +141,7 @@ function About() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent">
+      <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent pt-20 lg:pt-0">
         <img
           src={Nosotros}
           alt="Nosotross"
@@ -149,7 +149,7 @@ function About() {
         />
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center text-white px-4 mb-12">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4 pt-20 pb-8 lg:pt-0 lg:pb-12 lg:justify-end">
           <h1 className="text-4xl md:text-6xl text-base-100 font-bold font-poppins mb-6 animate-fade-in">
             Nosotros
           </h1>

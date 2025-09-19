@@ -42,7 +42,7 @@ function Admissions() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent">
+      <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent pt-20 lg:pt-0">
         <img
           src={Admissions_img}
           alt="Admisiones Gimnasio El Paraíso"
@@ -50,12 +50,12 @@ function Admissions() {
         />
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center text-white px-4 mb-12">
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-end text-center text-white px-4 pt-10 pb-8 lg:pt-0 lg:pb-12">
           <h1 className="text-4xl md:text-6xl text-base-100 font-bold font-poppins mb-6 animate-fade-in">
             Admisiones 2025
           </h1>
           <p className="text-xl md:text-2xl font-b mb-8 leading-relaxed max-w-3xl">
-            Únete a nuestra comunidad educativa y forma parte de la familia Gimnasio El Paraíso
+            Únete a nuestra comunidad educativa de Gimnasio El Paraíso
           </p>
         </div>
       </section>
