@@ -11,31 +11,42 @@ export default function Header() {
   }
 
   const [opacity, setOpacity] = useState(0);
+  const [navStyle, setNavStyle] = useState({});
 
   useEffect(() => {
-    const onScroll = () => {
+    const updateNavStyle = () => {
       const Y = window.scrollY;
-      setOpacity(Math.min(Y / 300, 1));
-  };
+      const newOpacity = Math.min(Y / 300, 1);
+      setOpacity(newOpacity);
+      setNavStyle({ 
+        ["--tw-bg-opacity" as any]: window.innerWidth >= 1024 ? newOpacity : 1 
+      });
+    };
+
+    const onResize = () => {
+      updateNavStyle(); // Recalcular cuando cambie el tamaño
+    };
     
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // Initialize opacity on mount
-    return() => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('scroll', updateNavStyle, { passive: true });
+    window.addEventListener('resize', onResize);
+    updateNavStyle(); // Initialize on mount
+    
+    return() => {
+      window.removeEventListener('scroll', updateNavStyle);
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
-  const isSolid = opacity > 0.99;
   const changeTextColor = opacity > 0.5;
 
   return (
     <>
-      <nav className={`navbar fixed top-0 z-50 h-16 backdrop-blur-[2px] transition-colors duration-300 ${
-        isSolid ? "shadow-md" : ""
-      } bg-primary`}
-      style={{ ["--tw-bg-opacity" as any]: opacity }}
+      <nav className="navbar fixed top-0 z-50 h-20 backdrop-blur-[2px] transition-colors duration-300 bg-primary"
+      style={navStyle}
       >
         <div className="navbar-start">
           <Link to='/' className="flex items-center">
-            <img src={logo} alt="Escudo Gimnasio el Paraíso" className="w-12 h-12 md:w-16 md:h-16" />
+            <img src={logo} alt="Escudo Gimnasio el Paraíso" className="w-12 h-12 md:w-20 md:h-20" />
           </Link>
         </div>
         
@@ -79,7 +90,20 @@ export default function Header() {
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-primary shadow-lg border-t border-white/10">
+      <div className="lg:hidden fixed inset-0 z-[60]">
+        {/* overlay clicable sin color para no romper el blur */}
+        <div className="absolute inset-0" onClick={toggleMenu} />
+
+        <div
+          className="
+            absolute inset-x-0 top-20
+            max-h-[calc(100dvh-5rem)] overflow-y-auto
+            bg-primary backdrop-blur-[2px]
+            transition-colors duration-300
+            border-white/10 shadow-lg
+          "
+          style={navStyle} // <- misma opacidad que el navbar
+        >
           <ul className='menu menu-vertical text-base-100 font-poppins font-semibold p-4'>
             <li>
               <Link to='/' className='hover:text-accent transition-colors py-3' onClick={toggleMenu}>Inicio</Link>
@@ -98,6 +122,7 @@ export default function Header() {
             </li>
           </ul>
         </div>
+      </div>
       )}
     </>
   )

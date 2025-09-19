@@ -2,7 +2,7 @@
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react'
 import { SCHOOL_INFO, CONTACT_INFO } from '../utils/constants'
 import { useState, useEffect } from 'react'
-import ContactImage from '../assets/us/home4.jpg'
+import ContactImage from '../assets/home.jpg'
 
 function Contact() {
   const [scrollOpacity, setScrollOpacity] = useState(0);
@@ -21,17 +21,19 @@ function Contact() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 bg-cover bg-center bg-no-repeat min-h-[70vh] flex items-center"
-               style={{ backgroundImage: `url(${ContactImage})` }}>
-        <div 
-          className="absolute inset-0 bg-black transition-opacity duration-300"
-          style={{ opacity: Math.max(scrollOpacity, 0.4) }}
+      <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent">
+        <img
+          src={ContactImage}
+          alt="Nosotross"
+          className="block max-w-full h-auto object-contain mx-auto"
         />
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 font-poppins drop-shadow-lg">
+        <div className="absolute inset-0 bg-black/40"></div>
+
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center text-white px-4 mb-12">
+          <h1 className="text-4xl md:text-6xl text-base-100 font-bold font-poppins mb-6 animate-fade-in">
             Contacto
           </h1>
-          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto drop-shadow-md">
+          <p className="text-xl md:text-2xl font-b mb-8 leading-relaxed">
             Estamos aquí para resolver todas tus dudas y acompañarte en el proceso educativo
           </p>
         </div>

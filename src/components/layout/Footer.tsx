@@ -15,7 +15,7 @@ function Footer() {
             <div className="flex items-center gap-4 mb-4">
               <img src={logo} alt="Gimnasio el Paraíso" className="w-16 h-16" />
               <div>
-                <h3 className="text-xl font-bold font-poppins">Gimnasio el Paraíso</h3>
+                <h3 className="text-xl font-bold font-poppins">Gimnasio El Paraíso</h3>
                 <p className="text-base-100/80">Educación de calidad desde {SCHOOL_INFO.founded}</p>
               </div>
             </div>
@@ -23,14 +23,8 @@ function Footer() {
               Formamos seres húmano íntegros con excelencia académica, valores humanos y responsabilidad social.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-base-100/80 hover:text-accent transition-colors">
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-base-100/80 hover:text-accent transition-colors">
+              <a href="https://www.instagram.com/gimpa.paraiso/" target="_blank" className="text-base-100/80 hover:text-accent transition-colors">
                 <Instagram className="w-6 h-6" />
-              </a>
-              <a href="#" className="text-base-100/80 hover:text-accent transition-colors">
-                <Youtube className="w-6 h-6" />
               </a>
             </div>
           </div>

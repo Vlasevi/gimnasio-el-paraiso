@@ -1,6 +1,7 @@
 
-import { ChevronRight, Award, Users, BookOpen } from 'lucide-react'
+import { ChevronRight, Award, Users, BookOpen, ChevronLeft } from 'lucide-react'
 import { Link } from 'react-router'
+import { useState, useEffect } from 'react'
 import Portada from '../assets/home.jpg'
 import { SCHOOL_INFO } from '../utils/constants'
 import Home1 from '../assets/us/home1.jpg';
@@ -23,10 +24,32 @@ import Primaria from '../assets/school/primaria.jpg';
 import Bachillerato from '../assets/school/bachillerato.jpg';
 
 function Home() {
+  const moments = [
+    Moments1, Moments2, Moments3, Moments4, Moments5, Moments6, Moments7, Moments8, Moments9
+  ];
+  
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % moments.length);
+    }, 3000);
+    
+    return () => clearInterval(interval);
+  }, [moments.length]);
+  
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % moments.length);
+  };
+  
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + moments.length) % moments.length);
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent">
+      <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent pt-20 lg:pt-0">
         <img
           src={Portada}
           alt="Portada"
@@ -34,21 +57,17 @@ function Home() {
         />
         <div className="absolute inset-0 bg-black/40"></div>
 
-        <div className="absolute inset-0 z-10 flex flex-col items-center justify-end text-center text-white px-4 mb-12">
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center text-white px-4 pt-20 pb-8 lg:pt-0 lg:pb-12 lg:justify-end">
           <h1 className="text-4xl md:text-6xl text-base-100 font-bold font-poppins mb-6 animate-fade-in">
-            Gimnasio el Paraíso
+            GIMNASIO EL PARAÍSO
           </h1>
-          <p className="text-xl md:text-2xl font-b mb-8 leading-relaxed">
-            Educando con inclusión desde {SCHOOL_INFO.founded}.
+          <p className="text-lg md:text-2xl font-b mb-6 md:mb-8 leading-relaxed hidden sm:block">
+            Con fe, esfuerzo y sabiduría formamos la esperanza del mañana.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/admissions" className="btn btn-accent btn-lg text-white border-accent hover:bg-white hover:text-primary hover:border-white font-semibold">
-              Conocenos
-              <ChevronRight className="w-5 h-5" />
-            </Link>
             <Link
               to="/about"
-              className="btn btn-accent btn-lg text-white border-accent hover:bg-white hover:text-primary hover:border-white font-semibold"
+              className="btn btn-accent btn-md md:btn-lg text-white border-accent hover:bg-white hover:text-primary hover:border-white font-semibold"
             >
               Descubre nuestra historia
             </Link>
@@ -66,12 +85,12 @@ function Home() {
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-poppins">
                 ¿Quiénes Somos?
               </h2>
-              <p className="text-lg leading-relaxed mb-6 text-neutral">
-                El Gimnasio el Paraíso es una institución educativa que desde {SCHOOL_INFO.founded} se ha dedicado
+              <p className="text-lg leading-relaxed mb-6 text-neutral text-justify">
+                Gimnasio El Paraíso es una institución educativa que desde {SCHOOL_INFO.founded} se ha dedicado
                 a formar estudiantes íntegros, críticos y competentes. Ofrecemos educación de calidad
-                desde preescolar hasta bachillerato, fundamentada en valores humanos, excelencia académica inclusión.
+                desde preescolar hasta bachillerato, fundamentada en valores humanos y excelencia académica.
               </p>
-              <p className="text-lg leading-relaxed mb-8 text-neutral">
+              <p className="text-lg leading-relaxed mb-8 text-neutral text-justify">
                 Nuestro compromiso es desarrollar las potencialidades de cada estudiante, fomentando
                 el pensamiento crítico, la creatividad y la responsabilidad social.
               </p>
@@ -98,7 +117,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Collage de Fotos en Movimiento */}
+      {/* Carrusel de Fotos de Estudiantes */}
       <section className="py-16 bg-primary overflow-hidden">
         <div className="container mx-auto px-4 mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-4 font-poppins">
@@ -109,15 +128,55 @@ function Home() {
           </p>
         </div>
 
-        <div className="flex gap-4 animate-pulse">
-          <div className="flex gap-4 min-w-max">
-            {[
-              Moments1, Moments2, Moments3, Moments4, Moments5, Moments6, Moments7, Moments8, Moments9
-            ].map((img, index) => (
-              <img key={index}
-                src={img}
-                alt={`Actividad escolar ${index + 1}`}
-                className="w-64 h-40 object-cover rounded-lg shadow-lg" />
+        <div className="relative max-w-6xl mx-auto px-4">
+          {/* Carrusel Container */}
+          <div className="relative overflow-hidden rounded-xl">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {moments.map((img, index) => (
+                <div key={index} className="w-full flex-shrink-0 h-64 md:h-80 lg:h-96">
+                  <img
+                    src={img}
+                    alt={`Actividad escolar ${index + 1}`}
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Botones de Navegación */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+            aria-label="Imagen anterior"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+            aria-label="Siguiente imagen"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Indicadores */}
+          <div className="flex justify-center mt-6 space-x-2">
+            {moments.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide 
+                    ? 'bg-white scale-125' 
+                    : 'bg-white/50 hover:bg-white/70'
+                }`}
+                aria-label={`Ir a imagen ${index + 1}`}
+              />
             ))}
           </div>
         </div>
@@ -137,7 +196,7 @@ function Home() {
                 <h3 className="card-title justify-center text-primary mb-3">Excelencia Académica</h3>
                 <p className="text-neutral">
                   Programas académicos de alta calidad que preparan a nuestros estudiantes
-                  para los desafíos universitarios y profesionales.
+                  para continuar su camino académico.
                 </p>
               </div>
             </div>
@@ -158,8 +217,7 @@ function Home() {
                 <BookOpen className="w-12 h-12 text-accent mx-auto mb-4" />
                 <h3 className="card-title justify-center text-primary mb-3">Metodología Innovadora</h3>
                 <p className="text-neutral">
-                  Estrategias pedagógicas modernas que fomentan el pensamiento crítico,
-                  la inclusión y el aprendizaje activo en cualquier entorno.
+                  Propuesta pedagógica que combina las bases clásicas de la enseñanza (propias del modelo tradicional) con estrategias adaptadas a las características individuales de cada estudiante.
                 </p>
               </div>
             </div>
@@ -175,21 +233,22 @@ function Home() {
           </h2>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Preescolar */}
+          {/* Preescolar */}
             <div className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
               <figure className="px-6 pt-6">
                 <img src={Prescolar}
-                  alt="Preescolar"
+                  alt="Primaria"
                   className="rounded-xl h-48 w-full object-cover" />
               </figure>
               <div className="card-body">
                 <h3 className="card-title text-primary">Preescolar</h3>
                 <p className="text-neutral mb-4">
-                  Educación inicial de 3 a 5 años enfocada en el desarrollo de habilidades
-                  básicas, socialización y preparación para la educación formal.
+                  La educación inicial ofrece un entorno de cuidado y aprendizaje en el que los niños reciben estimulación temprana, fortalecen su desarrollo cognitivo y adquieren sus primeras habilidades. Al mismo tiempo, promueve la socialización y la preparación con seguridad y confianza para el inicio de la vida escolar.  
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="badge badge-accent">Pre-jardín</span>
+                  <span className="badge badge-accent">Caminadores</span>
+                  <span className="badge badge-accent">Párvulos</span>
+                  <span className="badge badge-accent">Pre-Jardín</span>
                   <span className="badge badge-accent">Jardín</span>
                   <span className="badge badge-accent">Transición</span>
                 </div>
@@ -207,13 +266,13 @@ function Home() {
                   className="rounded-xl h-48 w-full object-cover" />
               </figure>
               <div className="card-body">
-                <h3 className="card-title text-primary">Primaria</h3>
+                <h3 className="card-title text-primary">Básica Primaria y Secundaria</h3>
                 <p className="text-neutral mb-4">
-                  Educación básica primaria de 1º a 5º grado con énfasis en lectoescritura,
-                  matemáticas, ciencias naturales y formación en valores.
+                  Educación básica primaria y secundaria con énfasis en lectoescritura, desarrollo de la lectura crítica, fortalecimiento del razonamiento lógico-matemático, exploración de las ciencias naturales y formación integral en valores.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="badge badge-info">1º - 5º Grado</span>
+                  <span className="badge badge-accent">1º - 5º (Primaria)</span>
+                  <span className="badge badge-accent">6º - 9º (Secundaria)</span>
                 </div>
                 <div className="card-actions justify-end">
                   <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
@@ -229,13 +288,12 @@ function Home() {
                   className="rounded-xl h-48 w-full object-cover" />
               </figure>
               <div className="card-body">
-                <h3 className="card-title text-primary">Bachillerato</h3>
+                <h3 className="card-title text-primary">Media</h3>
                 <p className="text-neutral mb-4">
-                  Educación media de 6º a 11º grado con preparación para la educación superior
-                  y énfasis en áreas de interés profesional.
+                  Educación media enfocada en la profundización de la lectura crítica, el pensamiento lógico y científico, el análisis de contextos sociales y culturales, y la preparación integral para la educación superior y el mundo laboral, bajo principios de formación ética y ciudadana.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="badge badge-warning">6º - 11º Grado</span>
+                  <span className="badge badge-accent">10º - 11º Grado</span>
                 </div>
                 <div className="card-actions justify-end">
                   <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
