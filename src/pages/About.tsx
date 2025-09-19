@@ -17,7 +17,7 @@ import MayerlisImg from '../assets/work_team/mayerlis.png'
 import NicolleImg from '../assets/work_team/nicolle.png'
 import VictorImg from '../assets/work_team/victor.png'
 import YanethImg from '../assets/work_team/yaneth.png'
-
+import ZulisImg from '../assets/work_team/zulis.png'
 
 
 function ObtenerAñoActual() {
@@ -126,7 +126,7 @@ function About() {
     {
       name: "Zulis Dionisia Urbina Guerra",
       position: "Docente",
-      image: YanethImg,
+      image: ZulisImg,
       description: "Licenciada en Educación Infantil"    
     }
   ]
