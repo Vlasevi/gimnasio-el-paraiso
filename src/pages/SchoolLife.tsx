@@ -18,10 +18,9 @@ function SchoolLife() {
 
   const years = [
     { grade: "Preescolar", image: Moments1, description: "Primeros pasos en el aprendizaje" },
-    { grade: "1º - 3º Primaria", image: Moments2, description: "Explorando el mundo del conocimiento" },
-    { grade: "4º - 5º Primaria", image: Moments3, description: "Desarrollando habilidades críticas" },
-    { grade: "6º - 8º Bachillerato", image: Moments4, description: "Formación integral y valores" },
-    { grade: "9º - 11º Bachillerato", image: Moments5, description: "Preparación para el futuro" }
+    { grade: "Primaria", image: Moments2, description: "Explorando el mundo del conocimiento" },
+    { grade: "Media", image: Moments3, description: "Desarrollando habilidades críticas" },
+    { grade: "Bachillerato", image: Moments4, description: "Formación integral y valores" }
   ]
 
   const news = [
@@ -151,7 +150,7 @@ function SchoolLife() {
         </div>
       </section>
 
-      {/* Logros y Reconocimientos */}
+      {/*
       <section className="py-16 bg-base-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
@@ -193,8 +192,8 @@ function SchoolLife() {
           </div>
         </div>
       </section>
-
-      {/* Testimonios */}
+      */}
+  {/*    
       <section className="py-16 bg-base-200">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
@@ -225,7 +224,7 @@ function SchoolLife() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Calendario Escolar */}
       <section className="py-16 bg-primary">

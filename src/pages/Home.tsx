@@ -110,10 +110,89 @@ function Home() {
         </div>
       </section>
 
+          {/* Nuestros Servicios */}
+      <section className="py-16 bg-base-200">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
+            Nuestros Servicios Educativos
+          </h2>
+
+          <div className="grid lg:grid-cols-3 gap-8">
+          {/* Preescolar */}
+            <div className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
+              <figure className="px-6 pt-6">
+                <img src={Prescolar}
+                  alt="Primaria"
+                  className="rounded-xl h-48 w-full object-cover" />
+              </figure>
+              <div className="card-body">
+                <h3 className="card-title text-primary">Preescolar</h3>
+                <p className="text-neutral mb-4">
+                  La educación inicial ofrece un entorno de cuidado y aprendizaje en el que los niños reciben estimulación temprana, fortalecen su desarrollo cognitivo y adquieren sus primeras habilidades. Al mismo tiempo, promueve la socialización y la preparación con seguridad y confianza para el inicio de la vida escolar.  
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="badge badge-accent">Caminadores</span>
+                  <span className="badge badge-accent">Párvulos</span>
+                  <span className="badge badge-accent">Pre-Jardín</span>
+                  <span className="badge badge-accent">Jardín</span>
+                  <span className="badge badge-accent">Transición</span>
+                </div>
+                <div className="card-actions justify-end">
+                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Primaria */}
+            <div className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
+              <figure className="px-6 pt-6">
+                <img src={Primaria}
+                  alt="Primaria"
+                  className="rounded-xl h-48 w-full object-cover" />
+              </figure>
+              <div className="card-body">
+                <h3 className="card-title text-primary">Básica Primaria y Secundaria</h3>
+                <p className="text-neutral mb-4">
+                  Educación básica primaria y secundaria con énfasis en lectoescritura, desarrollo de la lectura crítica, fortalecimiento del razonamiento lógico-matemático, exploración de las ciencias naturales y formación integral en valores.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="badge badge-accent">1º - 5º (Primaria)</span>
+                  <span className="badge badge-accent">6º - 9º (Secundaria)</span>
+                </div>
+                <div className="card-actions justify-end">
+                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Bachillerato */}
+            <div className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
+              <figure className="px-6 pt-6">
+                <img src={Bachillerato}
+                  alt="Bachillerato"
+                  className="rounded-xl h-48 w-full object-cover" />
+              </figure>
+              <div className="card-body">
+                <h3 className="card-title text-primary">Media</h3>
+                <p className="text-neutral mb-4">
+                  Educación media enfocada en la profundización de la lectura crítica, el pensamiento lógico y científico, el análisis de contextos sociales y culturales, y la preparación integral para la educación superior y el mundo laboral, bajo principios de formación ética y ciudadana.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="badge badge-accent">10º - 11º Grado</span>
+                </div>
+                <div className="card-actions justify-end">
+                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Galería de Fotos de Estudiantes */}
       <section className="py-16 bg-base-100">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-neutral mb-4 font-poppins">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-neutral mb-4 font-poppins text-primary">
             Nuestros estudiantes en Acción
           </h2>
           <p className="text-center text-neutral/70 text-lg max-w-2xl mx-auto mb-12">
@@ -121,7 +200,7 @@ function Home() {
           </p>
 
           {/* Grid minimalista de fotos */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 max-w-5xl mx-auto">
             {moments.map((img, index) => (
               <div 
                 key={index} 
@@ -203,84 +282,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Nuestros Servicios */}
-      <section className="py-16 bg-base-200">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
-            Nuestros Servicios Educativos
-          </h2>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-          {/* Preescolar */}
-            <div className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
-              <figure className="px-6 pt-6">
-                <img src={Prescolar}
-                  alt="Primaria"
-                  className="rounded-xl h-48 w-full object-cover" />
-              </figure>
-              <div className="card-body">
-                <h3 className="card-title text-primary">Preescolar</h3>
-                <p className="text-neutral mb-4">
-                  La educación inicial ofrece un entorno de cuidado y aprendizaje en el que los niños reciben estimulación temprana, fortalecen su desarrollo cognitivo y adquieren sus primeras habilidades. Al mismo tiempo, promueve la socialización y la preparación con seguridad y confianza para el inicio de la vida escolar.  
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="badge badge-accent">Caminadores</span>
-                  <span className="badge badge-accent">Párvulos</span>
-                  <span className="badge badge-accent">Pre-Jardín</span>
-                  <span className="badge badge-accent">Jardín</span>
-                  <span className="badge badge-accent">Transición</span>
-                </div>
-                <div className="card-actions justify-end">
-                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Primaria */}
-            <div className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
-              <figure className="px-6 pt-6">
-                <img src={Primaria}
-                  alt="Primaria"
-                  className="rounded-xl h-48 w-full object-cover" />
-              </figure>
-              <div className="card-body">
-                <h3 className="card-title text-primary">Básica Primaria y Secundaria</h3>
-                <p className="text-neutral mb-4">
-                  Educación básica primaria y secundaria con énfasis en lectoescritura, desarrollo de la lectura crítica, fortalecimiento del razonamiento lógico-matemático, exploración de las ciencias naturales y formación integral en valores.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="badge badge-accent">1º - 5º (Primaria)</span>
-                  <span className="badge badge-accent">6º - 9º (Secundaria)</span>
-                </div>
-                <div className="card-actions justify-end">
-                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Bachillerato */}
-            <div className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
-              <figure className="px-6 pt-6">
-                <img src={Bachillerato}
-                  alt="Bachillerato"
-                  className="rounded-xl h-48 w-full object-cover" />
-              </figure>
-              <div className="card-body">
-                <h3 className="card-title text-primary">Media</h3>
-                <p className="text-neutral mb-4">
-                  Educación media enfocada en la profundización de la lectura crítica, el pensamiento lógico y científico, el análisis de contextos sociales y culturales, y la preparación integral para la educación superior y el mundo laboral, bajo principios de formación ética y ciudadana.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="badge badge-accent">10º - 11º Grado</span>
-                </div>
-                <div className="card-actions justify-end">
-                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Call to Action */}
       <section className="py-16 bg-primary">

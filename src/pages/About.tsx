@@ -18,6 +18,7 @@ import NicolleImg from '../assets/work_team/nicolle.png'
 import VictorImg from '../assets/work_team/victor.png'
 import YanethImg from '../assets/work_team/yaneth.png'
 import ZulisImg from '../assets/work_team/zulis.png'
+import AnyilisImg from '../assets/work_team/anyilis.png'
 
 
 function ObtenerAñoActual() {
@@ -112,10 +113,10 @@ function About() {
       description: "Licenciada en Matemáticas"        
     },
     {
-      name: "Victor?",
-      position: "Auxiliar?",
+      name: "Victor Alfonzo Uban Cano",
+      position: "Docente de entrenamiento físico",
       image: VictorImg,
-      description: "?"     
+      description: ""     
     },
     {
       name: "Yaneth del Carmen Díaz Rivera",
@@ -128,6 +129,12 @@ function About() {
       position: "Docente",
       image: ZulisImg,
       description: "Licenciada en Educación Infantil"    
+    },
+    {
+      name: "Anyilis Yaneth Mejía Aruachan",
+      position: "Docente",
+      image: ZulisImg,
+      description: "Licenciada en Biología y Química"    
     }
   ]
 

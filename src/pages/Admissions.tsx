@@ -1,4 +1,4 @@
-import { MessageCircle, User, Calendar, MapPin, Phone, CheckCircle, AlertCircle, GraduationCap, Users, Heart, CreditCard, Clock } from 'lucide-react'
+import { MessageCircle, User, Calendar, MapPin, Phone, CheckCircle, AlertCircle, GraduationCap, Users, Heart } from 'lucide-react'
 import { Link } from 'react-router'
 import Admissions_img from '../assets/home.jpg'
 import { CONTACT_INFO } from '../utils/constants'
@@ -12,73 +12,32 @@ function Admissions() {
     { icon: Calendar, title: "Edad", description: "Edad actual del estudiante" },
     { icon: GraduationCap, title: "Grado al que aspira ingresar", description: "Nivel educativo deseado" },
     { icon: Users, title: "Colegio de procedencia", description: "Institución educativa anterior" },
-    { icon: Heart, title: "Motivo del cambio de institución", description: "Para brindar mejor acompañamiento" },
-    { icon: AlertCircle, title: "Diagnósticos especiales", description: "Acompañamientos psicológico/pedagógico (si aplica)" },
-    { icon: User, title: "Nombre del acudiente", description: "Datos del responsable del estudiante" }
+    { icon: Heart, title: "Motivo del cambio de institución", description: "Queremos conocer tus razones para acompañarte mejor" },
+    { icon: AlertCircle, title: "¿Tiene algún diagnóstico, terapia o acompañamiento?", description: "Psicológico/pedagógico (si es así, indícanos brevemente en qué consiste)" },
+    { icon: User, title: "Nombre completo del acudiente o responsable", description: "Datos del responsable del estudiante" }
   ]
 
   const processSteps = [
     {
       step: "1",
-      title: "Información Inicial",
-      description: "Proporciona la información requerida vía WhatsApp",
-      details: "Nombre, edad, grado, colegio anterior, motivo del cambio, diagnósticos especiales y datos del acudiente"
-    },
-    {
-      step: "2", 
-      title: "Formulario de Inscripción",
-      description: "Diligencia el formulario que te enviaremos",
+      title: "Diligenciar el formulario de inscripción",
+      description: "Te lo enviaremos una vez recibamos la información inicial",
       details: "Formulario completo con toda la información del estudiante y la familia"
     },
     {
-      step: "3",
-      title: "Pago de Inscripción",
-      description: "Realiza el pago de $90.000 COP",
-      details: "EXENCIÓN: Los estudiantes de preescolar NO pagan inscripción. Métodos de pago vía WhatsApp"
+      step: "2",
+      title: "Cancelar el valor de inscripción",
+      description: "$90.000 COP (Los estudiantes de preescolar NO pagan inscripción)",
+      details: "NOTA: Los estudiantes de preescolar no pagan inscripción"
     },
     {
-      step: "4",
-      title: "Evaluaciones y Entrevistas",
-      description: "Participa en las tres fechas programadas",
-      details: "Evaluación académica, entrevista psicológica y entrega de respuesta oficial"
+      step: "3",
+      title: "Programación de tres fechas",
+      description: "Fechas acordadas con el acudiente para completar el proceso",
+      details: "Evaluación diagnóstica académica, entrevista con psicología y entrega de respuesta oficial"
     }
   ]
 
-  const educationalLevels = [
-    {
-      level: "Preescolar",
-      description: "Primeros pasos en el aprendizaje",
-      features: [
-        "Sin costo de inscripción",
-        "Sin evaluaciones académicas",
-        "Sin entrevistas formales", 
-        "Proceso de adaptación amigable",
-        "Compromiso activo de padres",
-        "Desarrollo respetuoso del niño/a"
-      ],
-      highlight: true
-    },
-    {
-      level: "Primaria",
-      description: "Formación integral básica",
-      features: [
-        "Evaluación diagnóstica académica",
-        "Entrevista con psicología",
-        "Enfoque en formación integral",
-        "Desarrollo de competencias básicas"
-      ]
-    },
-    {
-      level: "Secundaria y Media",
-      description: "Preparación para el futuro",
-      features: [
-        "Evaluación académica completa",
-        "Entrevista familiar integral",
-        "Orientación vocacional",
-        "Preparación universitaria"
-      ]
-    }
-  ]
 
   return (
     <div className="min-h-screen">
@@ -108,10 +67,16 @@ function Admissions() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-poppins">
               Proceso de Admisión
             </h2>
+            <div className="bg-accent text-white p-6 rounded-lg max-w-4xl mx-auto mb-8">
+              <h3 className="text-2xl font-bold mb-4">🎓 ¡Bienvenido(a) al Gimnasio El Paraíso! 🏦</h3>
+              <p className="text-lg">
+                Gracias por comunicarte con nosotros. Nos alegra que estés interesado(a) en hacer parte de nuestra 
+                comunidad educativa, que ofrece <strong>formación integral en preescolar, primaria, secundaria y media.</strong>
+              </p>
+            </div>
             <p className="text-lg text-neutral max-w-4xl mx-auto">
-              En el <strong>Gimnasio El Paraíso</strong> ofrecemos educación de calidad desde <strong>Preescolar hasta Media</strong>, 
-              con un enfoque en <strong>formación integral</strong>. Nuestro proceso de admisión está diseñado para conocer 
-              mejor a cada estudiante y su familia, garantizando el mejor acompañamiento educativo.
+              Para brindarte una atención personalizada en el proceso de admisión, por favor respóndenos 
+              la siguiente información:
             </p>
           </div>
 
@@ -227,20 +192,20 @@ function Admissions() {
               <div className="card-body">
                 <h3 className="card-title text-2xl mb-4">📅 Programación de Fechas</h3>
                 <p className="mb-4">
-                  Una vez completados los pasos 1, 2 y 3, programaremos <strong>tres fechas</strong> acordadas contigo para:
+                  Se asignarán <strong>tres fechas</strong> acordadas con el acudiente para:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="bg-white/10 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">📝 Evaluación Diagnóstica</h4>
-                    <p className="text-sm text-white/90">Evaluación académica según el grado</p>
+                    <h4 className="font-semibold mb-2">✅ Evaluación diagnóstica académica</h4>
+                    <p className="text-sm text-white/90">Evaluación según el grado</p>
                   </div>
                   <div className="bg-white/10 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">🧠 Entrevista Psicológica</h4>
-                    <p className="text-sm text-white/90">Conversación con el área de psicología</p>
+                    <h4 className="font-semibold mb-2">✅ Entrevista con el área de psicología</h4>
+                    <p className="text-sm text-white/90">Conversación con psicología</p>
                   </div>
                   <div className="bg-white/10 p-4 rounded-lg">
-                    <h4 className="font-semibold mb-2">✅ Respuesta Oficial</h4>
-                    <p className="text-sm text-white/90">Entrega del resultado de admisión</p>
+                    <h4 className="font-semibold mb-2">✅ Entrega de respuesta oficial</h4>
+                    <p className="text-sm text-white/90">Resultado sobre la admisión una vez culminado el proceso</p>
                   </div>
                 </div>
               </div>
@@ -249,148 +214,54 @@ function Admissions() {
         </div>
       </section>
 
-      {/* Niveles Educativos */}
+      {/* Proceso Especial para Preescolar */}
       <section className="py-16 bg-base-200">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
-            Proceso por Niveles Educativos
-          </h2>
-          
-          <div className="grid lg:grid-cols-3 gap-8">
-            {educationalLevels.map((level, index) => (
-              <div key={index} className={`card shadow-xl ${level.highlight ? 'bg-accent text-white border-4 border-primary' : 'bg-white'}`}>
-                <div className="card-body">
-                  {level.highlight && (
-                    <div className="badge badge-primary mb-4">✨ Proceso Especial</div>
-                  )}
-                  <h3 className={`card-title text-2xl mb-4 ${level.highlight ? 'text-white' : 'text-primary'}`}>
-                    {level.level}
-                  </h3>
-                  <p className={`mb-6 ${level.highlight ? 'text-white/90' : 'text-neutral'}`}>
-                    {level.description}
-                  </p>
-                  
-                  <div className="space-y-3">
-                    {level.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-3">
-                        <CheckCircle className={`w-5 h-5 flex-shrink-0 ${level.highlight ? 'text-white' : 'text-accent'}`} />
-                        <span className={`text-sm ${level.highlight ? 'text-white/90' : 'text-neutral'}`}>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
+          <div className="card bg-accent text-white shadow-xl max-w-4xl mx-auto">
+            <div className="card-body text-center">
+              <GraduationCap className="w-20 h-20 mx-auto mb-6" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 font-poppins">Proceso Especial para Preescolar</h2>
+              <p className="text-xl mb-8">
+                En el caso de <strong>preescolar</strong>, no se realiza evaluación ni entrevista. En su lugar, 
+                se solicita el <strong>compromiso activo de los padres de familia</strong>, como parte fundamental 
+                del proceso de adaptación, con el fin de brindar una experiencia educativa amigable, 
+                respetuosa y favorable para el desarrollo del niño o la niña.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 text-left">
+                <div className="bg-white/20 p-6 rounded-lg">
+                  <h3 className="font-bold text-lg mb-4">🎯 No requiere:</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                      <span>Costo de inscripción</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                      <span>Evaluaciones académicas</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                      <span>Entrevistas formales</span>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12">
-            <div className="card bg-info text-white shadow-xl max-w-3xl mx-auto">
-              <div className="card-body text-center">
-                <h3 className="card-title justify-center text-2xl mb-4">🎓 Preescolar - Proceso Especial</h3>
-                <p className="mb-4">
-                  Para los estudiantes de <strong>preescolar</strong>, hemos diseñado un proceso especial que prioriza 
-                  la adaptación amigable y el desarrollo respetuoso del niño o niña.
-                </p>
-                <div className="grid md:grid-cols-2 gap-4 text-left">
-                  <div>
-                    <h4 className="font-semibold mb-2">🎯 No incluye:</h4>
-                    <ul className="text-sm space-y-1">
-                      <li>• Costo de inscripción</li>
-                      <li>• Evaluaciones académicas</li>
-                      <li>• Entrevistas formales</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">💖 Sí incluye:</h4>
-                    <ul className="text-sm space-y-1">
-                      <li>• Compromiso activo de padres</li>
-                      <li>• Proceso de adaptación favorable</li>
-                      <li>• Ambiente respetuoso y amigable</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Información de Costos */}
-      <section className="py-16 bg-base-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
-            Información de Costos
-          </h2>
-          
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div className="card bg-white shadow-xl">
-              <div className="card-body">
-                <div className="flex items-center gap-4 mb-6">
-                  <CreditCard className="w-12 h-12 text-accent" />
-                  <div>
-                    <h3 className="text-2xl font-bold text-primary">Costo de Inscripción</h3>
-                    <p className="text-accent">Proceso de admisión</p>
-                  </div>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">$90.000</div>
-                    <p className="text-neutral">COP - Pago único</p>
-                  </div>
-                  
-                  <div className="bg-base-200 p-4 rounded-lg">
-                    <h4 className="font-semibold text-primary mb-2">Incluye:</h4>
-                    <ul className="space-y-2 text-sm">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-accent" />
-                        Evaluación diagnóstica académica
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-accent" />
-                        Entrevista con área de psicología
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-accent" />
-                        Procesamiento de documentación
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-accent" />
-                        Acompañamiento personalizado
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="card bg-success text-white shadow-xl">
-              <div className="card-body text-center">
-                <GraduationCap className="w-20 h-20 mx-auto mb-6" />
-                <h3 className="card-title justify-center text-3xl mb-4">🎉 EXENCIÓN PREESCOLAR</h3>
-                <p className="text-2xl font-bold mb-4">$0 COP</p>
-                <p className="mb-6">
-                  Los estudiantes de <strong>preescolar NO pagan</strong> costo de inscripción. 
-                  Nuestro compromiso es facilitar el acceso a una educación de calidad desde los primeros años.
-                </p>
-                <div className="bg-white/20 p-4 rounded-lg">
-                  <p className="text-sm">
-                    Esta exención forma parte de nuestro compromiso con la educación inicial y 
-                    el desarrollo integral de los más pequeños.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-12 text-center">
-            <div className="alert alert-warning max-w-2xl mx-auto">
-              <Clock className="w-6 h-6" />
-              <div>
-                <h3 className="font-bold">Formas de Pago</h3>
-                <div className="text-sm">
-                  Los detalles de las formas de pago se proporcionan vía WhatsApp una vez 
-                  completado el formulario de inscripción.
+                <div className="bg-white/20 p-6 rounded-lg">
+                  <h3 className="font-bold text-lg mb-4">💖 Sí incluye:</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                      <span>Compromiso activo de padres</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                      <span>Proceso de adaptación favorable</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-white" />
+                      <span>Ambiente respetuoso y amigable</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -405,36 +276,16 @@ function Admissions() {
             ¿Listo para Formar Parte de Nuestra Comunidad?
           </h2>
           <p className="text-white/90 text-lg mb-8 max-w-3xl mx-auto">
-            En el <strong>Gimnasio El Paraíso</strong> te acompañamos en cada paso del proceso. 
-            Nuestro equipo está disponible para resolver todas tus dudas y brindarte el mejor acompañamiento.
+            ✨ Gracias por confiar en el Gimnasio El Paraíso. Estaremos encantados de acompañarte en este camino educativo. 🌱
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href={whatsappLink} 
                target="_blank" 
                rel="noopener noreferrer"
-               className="btn btn-accent btn-lg">
+               className="btn btn-accent btn-lg text-white">
               <MessageCircle className="w-6 h-6" />
               Iniciar Proceso por WhatsApp
             </a>
-            <Link to="/contact" className="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">
-              <Phone className="w-5 h-5" />
-              Más Información
-            </Link>
-            <a href={whatsappLink}
-               target="_blank" 
-               rel="noopener noreferrer" 
-               className="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary">
-              <MapPin className="w-5 h-5" />
-              Agendar Visita
-            </a>
-          </div>
-          
-          <div className="mt-8 bg-white/10 backdrop-blur-sm rounded-lg p-6 max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold text-white mb-4">📱 ¿Cómo empezar?</h3>
-            <p className="text-white/90 text-sm">
-              Haz clic en "Iniciar Proceso por WhatsApp" y nuestro equipo te guiará paso a paso. 
-              Es fácil, rápido y personalizado para cada familia.
-            </p>
           </div>
         </div>
       </section>
