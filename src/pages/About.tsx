@@ -1,4 +1,4 @@
-import { Award, Target, Eye, Heart, Users, BookOpen, Calendar } from 'lucide-react'
+import { Award, Target, Eye, Heart, BookOpen } from 'lucide-react'
 import { SCHOOL_INFO } from '../utils/constants';
 import Nosotros from '../assets/home.jpg'
 import PsicologaImg from '../assets/work_team/psicologa.jpg'
@@ -17,7 +17,7 @@ import MayerlisImg from '../assets/work_team/mayerlis.png'
 import NicolleImg from '../assets/work_team/nicolle.png'
 import VictorImg from '../assets/work_team/victor.png'
 import YanethImg from '../assets/work_team/yaneth.png'
-import ZulisImg from '../assets/work_team/zulis.png'
+
 
 
 function ObtenerAñoActual() {

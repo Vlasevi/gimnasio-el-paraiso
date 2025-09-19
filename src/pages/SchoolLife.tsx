@@ -1,6 +1,6 @@
 
 import { Calendar, Camera, Trophy, Star, Heart, Users } from 'lucide-react'
-import { useState, useEffect } from 'react'
+
 
 // Importar imágenes de momentos
 import Moments1 from '../assets/moments/acc1.jpg';
@@ -15,18 +15,6 @@ import Moments9 from '../assets/moments/acc9.jpg';
 import home from '../assets/home.jpg'
 
 function SchoolLife() {
-  const [scrollOpacity, setScrollOpacity] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const Y = window.scrollY;
-      setScrollOpacity(Math.min(Y / 300, 0.8));
-    };
-    
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   const years = [
     { grade: "Preescolar", image: Moments1, description: "Primeros pasos en el aprendizaje" },

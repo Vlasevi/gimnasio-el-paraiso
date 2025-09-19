@@ -1,5 +1,5 @@
 
-import { MapPin, Phone, Mail, Clock, Facebook, Instagram, Youtube } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Instagram } from 'lucide-react'
 import { Link } from 'react-router'
 import logo from '../../assets/logo.png'
 import { SCHOOL_INFO } from '../../utils/constants'

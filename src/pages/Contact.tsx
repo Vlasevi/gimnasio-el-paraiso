@@ -1,22 +1,10 @@
 
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react'
 import { SCHOOL_INFO, CONTACT_INFO } from '../utils/constants'
-import { useState, useEffect } from 'react'
+
 import ContactImage from '../assets/home.jpg'
 
 function Contact() {
-  const [scrollOpacity, setScrollOpacity] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const Y = window.scrollY;
-      setScrollOpacity(Math.min(Y / 300, 0.8));
-    };
-    
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   return (
     <div className="min-h-screen">
