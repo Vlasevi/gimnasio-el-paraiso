@@ -1,5 +1,5 @@
 
-import { ChevronRight, Award, Users, BookOpen, ChevronLeft } from 'lucide-react'
+import { ChevronRight, Award, Users, BookOpen } from 'lucide-react'
 import { Link } from 'react-router'
 import { useState, useEffect } from 'react'
 import Portada from '../assets/home.jpg'
@@ -38,13 +38,6 @@ function Home() {
     return () => clearInterval(interval);
   }, [moments.length]);
   
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % moments.length);
-  };
-  
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + moments.length) % moments.length);
-  };
 
   return (
     <div className="min-h-screen">
@@ -118,103 +111,49 @@ function Home() {
       </section>
 
       {/* Galería de Fotos de Estudiantes */}
-      <section className="py-16 bg-base-100 overflow-hidden">
-        <div className="container mx-auto px-4 mb-12">
+      <section className="py-16 bg-base-100">
+        <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-neutral mb-4 font-poppins">
             Nuestros estudiantes en Acción
           </h2>
-          <p className="text-center text-neutral/80 text-lg max-w-2xl mx-auto">
+          <p className="text-center text-neutral/70 text-lg max-w-2xl mx-auto mb-12">
             Momentos especiales que reflejan el espíritu y la alegría de nuestra familia educativa
           </p>
-        </div>
 
-        <div className="max-w-7xl mx-auto px-4">
-          {/* Grid de fotos moderno */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {/* Grid minimalista de fotos */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-6xl mx-auto">
             {moments.map((img, index) => (
               <div 
                 key={index} 
-                className={`group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer
-                  ${index === 0 ? 'md:col-span-2 md:row-span-2' : ''}
-                  ${index === 4 ? 'lg:col-span-2' : ''}
-                  ${index === 7 ? 'md:col-span-2' : ''}
-                `}
+                className="group relative overflow-hidden rounded-lg cursor-pointer transition-transform duration-300 hover:scale-105"
                 onClick={() => setCurrentSlide(index)}
               >
                 <img
                   src={img}
                   alt={`Actividad escolar ${index + 1}`}
-                  className={`w-full object-cover transition-transform duration-500 group-hover:scale-110
-                    ${index === 0 ? 'h-64 md:h-80 lg:h-96' : 'h-32 md:h-40 lg:h-48'}
-                  `}
+                  className="w-full h-32 md:h-40 object-cover transition-opacity duration-300 group-hover:opacity-90"
                 />
                 
-                {/* Overlay con efecto hover sutil */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
-                      <ChevronRight className="w-6 h-6 text-neutral" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Indicador de imagen activa */}
+                {/* Indicador sutil de imagen activa */}
                 {index === currentSlide && (
-                  <div className="absolute top-2 right-2 w-3 h-3 bg-accent rounded-full animate-pulse"></div>
+                  <div className="absolute top-2 right-2 w-2 h-2 bg-accent rounded-full"></div>
                 )}
               </div>
             ))}
           </div>
 
-          {/* Modal/Vista ampliada de la imagen seleccionada */}
-          <div className="mt-8 max-w-4xl mx-auto">
-            <div className="relative bg-white rounded-xl shadow-lg overflow-hidden">
-              <img
-                src={moments[currentSlide]}
-                alt={`Actividad escolar ${currentSlide + 1}`}
-                className="w-full h-64 md:h-80 lg:h-96 object-cover"
-              />
-              
-              {/* Overlay con gradiente sutil */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
-              
-              {/* Controles de navegación minimalistas */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-4">
-                <button
-                  onClick={prevSlide}
-                  className="w-10 h-10 bg-white/90 hover:bg-white text-neutral rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105"
-                  aria-label="Imagen anterior"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                
-                <span className="text-white font-medium text-sm bg-black/50 px-3 py-1 rounded-full">
-                  {currentSlide + 1} / {moments.length}
-                </span>
-                
-                <button
-                  onClick={nextSlide}
-                  className="w-10 h-10 bg-white/90 hover:bg-white text-neutral rounded-full flex items-center justify-center transition-all duration-200 hover:scale-105"
-                  aria-label="Siguiente imagen"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            </div>
-          </div>
-
           {/* Indicadores minimalistas */}
-          <div className="flex justify-center mt-6 space-x-2">
+          <div className="flex justify-center mt-8 space-x-1">
             {moments.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   index === currentSlide 
-                    ? 'bg-accent scale-125' 
-                    : 'bg-neutral/30 hover:bg-neutral/50'
+                    ? 'bg-accent' 
+                    : 'bg-neutral/20 hover:bg-neutral/40'
                 }`}
-                aria-label={`Ir a imagen ${index + 1}`}
+                aria-label={`Ver imagen ${index + 1}`}
               />
             ))}
           </div>
