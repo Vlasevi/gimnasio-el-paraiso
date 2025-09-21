@@ -1,5 +1,4 @@
 import { MessageCircle, User, Calendar, MapPin, Phone, CheckCircle, AlertCircle, GraduationCap, Users, Heart } from 'lucide-react'
-import { Link } from 'react-router'
 import Admissions_img from '../assets/home.jpg'
 import { CONTACT_INFO } from '../utils/constants'
 
