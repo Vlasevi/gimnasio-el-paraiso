@@ -1,13 +1,18 @@
 import logo from '../../assets/logo.png'
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router-dom'
 import { User, Menu, X } from 'lucide-react'
 import { useState, useEffect} from 'react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const location = useLocation()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  const isActiveLink = (path: string) => {
+    return location.pathname === path
   }
 
   const [opacity, setOpacity] = useState(0);
@@ -54,19 +59,19 @@ export default function Header() {
         <div className='navbar-center hidden lg:flex'>
           <ul className={`menu menu-horizontal font-poppins font-semibold ${changeTextColor ? "text-base-100" : "text-base-100"}`}>
             <li>
-              <Link to='/' className='hover:text-accent transition-colors px-4'>Inicio</Link>
+              <Link to='/' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/') ? 'text-accent font-bold' : ''}`}>Inicio</Link>
             </li>
             <li>
-              <Link to='/about' className='hover:text-accent transition-colors px-4'>Nosotros</Link>
+              <Link to='/about' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/about') ? 'text-accent font-bold' : ''}`}>Nosotros</Link>
             </li>
             <li>
-              <Link to='/admissions' className='hover:text-accent transition-colors px-4'>Admisiones</Link>
+              <Link to='/admissions' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/admissions') ? 'text-accent font-bold' : ''}`}>Admisiones</Link>
             </li>
             <li>
-              <Link to='/schoollife' className='hover:text-accent transition-colors px-4'>Vida Escolar</Link>
+              <Link to='/schoollife' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/schoollife') ? 'text-accent font-bold' : ''}`}>Vida Escolar</Link>
             </li>
             <li>
-              <Link to='/contact' className='hover:text-accent transition-colors px-4'>Contacto</Link>
+              <Link to='/contact' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/contact') ? 'text-accent font-bold' : ''}`}>Contacto</Link>
             </li>
           </ul>
         </div>
@@ -106,19 +111,19 @@ export default function Header() {
         >
           <ul className='menu menu-vertical text-base-100 font-poppins font-semibold p-4'>
             <li>
-              <Link to='/' className='hover:text-accent transition-colors py-3' onClick={toggleMenu}>Inicio</Link>
+              <Link to='/' className={`hover:text-accent transition-colors py-3 ${isActiveLink('/') ? 'text-accent font-bold' : ''}`} onClick={toggleMenu}>Inicio</Link>
             </li>
             <li>
-              <Link to='/about' className='hover:text-accent transition-colors py-3' onClick={toggleMenu}>Nosotros</Link>
+              <Link to='/about' className={`hover:text-accent transition-colors py-3 ${isActiveLink('/about') ? 'text-accent font-bold' : ''}`} onClick={toggleMenu}>Nosotros</Link>
             </li>
             <li>
-              <Link to='/admissions' className='hover:text-accent transition-colors py-3' onClick={toggleMenu}>Admisiones</Link>
+              <Link to='/admissions' className={`hover:text-accent transition-colors py-3 ${isActiveLink('/admissions') ? 'text-accent font-bold' : ''}`} onClick={toggleMenu}>Admisiones</Link>
             </li>
             <li>
-              <Link to='/schoollife' className='hover:text-accent transition-colors py-3' onClick={toggleMenu}>Vida Escolar</Link>
+              <Link to='/schoollife' className={`hover:text-accent transition-colors py-3 ${isActiveLink('/schoollife') ? 'text-accent font-bold' : ''}`} onClick={toggleMenu}>Vida Escolar</Link>
             </li>
             <li>
-              <Link to='/contact' className='hover:text-accent transition-colors py-3' onClick={toggleMenu}>Contacto</Link>
+              <Link to='/contact' className={`hover:text-accent transition-colors py-3 ${isActiveLink('/contact') ? 'text-accent font-bold' : ''}`} onClick={toggleMenu}>Contacto</Link>
             </li>
           </ul>
         </div>

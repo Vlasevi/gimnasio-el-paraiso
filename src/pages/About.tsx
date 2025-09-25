@@ -1,24 +1,25 @@
 import { Award, Target, Eye, Heart, BookOpen } from 'lucide-react'
 import { SCHOOL_INFO } from '../utils/constants';
 import Nosotros from '../assets/home.jpg'
-import PsicologaImg from '../assets/work_team/psicologa.jpg'
-import CoordinadoraImg from '../assets/work_team/coordinadora.png'
-import ViceRectoraImg from '../assets/work_team/vicerectora.png'
-import RectoraImg from '../assets/work_team/rectora.png'
 
-import MelissaImg from '../assets/work_team/melissa.png'
-import EnaysImg from '../assets/work_team/enays.png'
-import JesusImg from '../assets/work_team/jesus.png'
-import JhonatanImg from '../assets/work_team/jhonathan.png'
-import JorgeImg from '../assets/work_team/jorge.png'
-import JurleyImg from '../assets/work_team/jurley.png'
-import MariaImg from '../assets/work_team/maria.png'
-import MayerlisImg from '../assets/work_team/mayerlis.png'
-import NicolleImg from '../assets/work_team/nicolle.png'
-import VictorImg from '../assets/work_team/victor.png'
-import YanethImg from '../assets/work_team/yaneth.png'
-import ZulisImg from '../assets/work_team/zulis.png'
-import AnyilisImg from '../assets/work_team/anyilis.png'
+import PsicologaImg from '../assets/work_team/psicologa.webp'
+import CoordinadoraImg from '../assets/work_team/coordinadora.webp'
+import ViceRectoraImg from '../assets/work_team/vicerectora.webp'
+import RectoraImg from '../assets/work_team/rectora.webp'
+import MelissaImg from '../assets/work_team/melissa.webp'
+import EnaysImg from '../assets/work_team/enays.webp'
+import JesusImg from '../assets/work_team/jesus.webp'
+import JhonatanImg from '../assets/work_team/jhonathan.webp'
+import JorgeImg from '../assets/work_team/jorge.webp'
+import JurleyImg from '../assets/work_team/jurley.webp'
+import MariaImg from '../assets/work_team/maria.webp'
+import MayerlisImg from '../assets/work_team/mayerlis.webp'
+import NicolleImg from '../assets/work_team/nicolle.webp'
+import VictorImg from '../assets/work_team/victor.webp'
+import YanethImg from '../assets/work_team/yaneth.webp'
+import ZulisImg from '../assets/work_team/zulis.webp'
+import AnyilisImg from '../assets/work_team/anyilis.webp'
+import OscarImg from '../assets/work_team/oscar.webp'
 
 
 function ObtenerAñoActual() {
@@ -41,13 +42,13 @@ function About() {
       name: "Angela Anaya Pacheco",
       position: "Vicerrectora Académica",
       image: ViceRectoraImg,
-      description: "Ingeniera Electrica con especialización en Eficiencia Energética y Energías Renovables"
+      description: "Ingeniera Eléctrica con especialización en Eficiencia Energética y Energías Renovables"
     },
     {
       name: "Nataly Cortés Monzón",
       position: "Psicóloga",
       image: PsicologaImg,
-      description: "Profesional en Psicología con enfasis en Psicología Educativa"
+      description: "Profesional en Psicología con énfasis en Psicología Educativa"
     },
     {
       name: "Karina Torres Castilla",
@@ -62,7 +63,7 @@ function About() {
       name: "Mabel Melissa Villamizar",
       position: "Docente",
       image: MelissaImg,
-      description: "Profesional en Lengas Modernas y Cultura"
+      description: "Profesional en Lenguas Modernas y Cultura"
     }, 
     {
       name: "Enays Isabella Castro Comas",
@@ -80,7 +81,7 @@ function About() {
       name: "Johnatan de Jesús Martínez Cabria",
       position: "Docente",
       image: JhonatanImg,
-      description: "Profesional en Linguistica y Literatura"  
+      description: "Profesional en Lingüística y Literatura"  
     },
     {
       name: "Jorge David Moreno Schmalvache",
@@ -116,7 +117,7 @@ function About() {
       name: "Victor Alfonzo Uban Cano",
       position: "Docente de entrenamiento físico",
       image: VictorImg,
-      description: ""     
+      description: "Técnico laboral en Ejecución Musical con Instrumentos Funcionales"     
     },
     {
       name: "Yaneth del Carmen Díaz Rivera",
@@ -133,8 +134,14 @@ function About() {
     {
       name: "Anyilis Yaneth Mejía Aruachan",
       position: "Docente",
-      image: ZulisImg,
+      image: AnyilisImg,
       description: "Licenciada en Biología y Química"    
+    },
+    {
+      name: "Oscar Vega Gari",
+      position: "Contador",
+      image: OscarImg,
+      description: "Contador público"     
     }
   ]
 
@@ -239,7 +246,7 @@ function About() {
                 <ul className="text-left text-neutral space-y-2 grid grid-cols-2">
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
-                    Fé
+                    Fe
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>

@@ -5,7 +5,7 @@ import Admissions from './pages/Admissions'
 import Contact from './pages/Contact'
 import SchoolLife from './pages/SchoolLife'
 import Students from './pages/Students'
-import { BrowserRouter, Routes, Route } from 'react-router'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
 

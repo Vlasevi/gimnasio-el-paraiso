@@ -1,6 +1,6 @@
 
 import { ChevronRight, Award, Users, BookOpen } from 'lucide-react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Portada from '../assets/home.jpg'
 import { SCHOOL_INFO } from '../utils/constants'
