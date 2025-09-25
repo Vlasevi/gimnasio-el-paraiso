@@ -21,6 +21,11 @@ import ZulisImg from '../assets/work_team/zulis.webp'
 import AnyilisImg from '../assets/work_team/anyilis.webp'
 import OscarImg from '../assets/work_team/oscar.webp'
 
+// Convenios
+import UninorteImg from '../assets/convenios/uninorte.png'
+import CucImg from '../assets/convenios/cuc.png'
+import ReformadaImg from '../assets/convenios/reformada.png'
+
 
 function ObtenerAñoActual() {
   const añoActual = new Date().getFullYear();
@@ -370,8 +375,61 @@ function About() {
         </div>
       </section>
 
-      {/* Academia - REG y PEG */}
+      {/* Convenios */}
       <section className="py-16 bg-base-200">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
+            Convenios
+          </h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {/* Universidad del Norte */}
+            <div className="bg-white rounded-lg shadow-xl p-6 text-center hover:scale-105 transition-transform duration-300">
+              <a href="https://www.uninorte.edu.co" target="_blank" rel="noopener noreferrer" className="block">
+                <img
+                  src={UninorteImg}
+                  alt="Universidad del Norte"
+                  className="h-20 w-auto object-contain mx-auto mb-4"
+                />
+                <h3 className="text-lg font-semibold text-primary">
+                  Universidad del Norte
+                </h3>
+              </a>
+            </div>
+
+            {/* Universidad de la Costa */}
+            <div className="bg-white rounded-lg shadow-xl p-6 text-center hover:scale-105 transition-transform duration-300">
+              <a href="https://www.cuc.edu.co" target="_blank" rel="noopener noreferrer" className="block">
+                <img
+                  src={CucImg}
+                  alt="Universidad de la Costa"
+                  className="h-20 w-auto object-contain mx-auto mb-4"
+                />
+                <h3 className="text-lg font-semibold text-primary">
+                  Universidad de la Costa
+                </h3>
+              </a>
+            </div>
+
+            {/* Universidad Reformada de Colombia */}
+            <div className="bg-white rounded-lg shadow-xl p-6 text-center hover:scale-105 transition-transform duration-300">
+              <a href="https://www.unireformada.edu.co" target="_blank" rel="noopener noreferrer" className="block">
+                <img
+                  src={ReformadaImg}
+                  alt="Universidad Reformada de Colombia"
+                  className="h-20 w-auto object-contain mx-auto mb-4"
+                />
+                <h3 className="text-lg font-semibold text-primary">
+                  Universidad Reformada de Colombia
+                </h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Academia - REG y PEG */}
+      <section className="py-16 bg-base-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
             Marco Académico

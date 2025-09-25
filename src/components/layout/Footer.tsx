@@ -1,9 +1,13 @@
-
 import { MapPin, Phone, Mail, Clock, Instagram } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/logo.png'
 import { SCHOOL_INFO } from '../../utils/constants'
 import { CONTACT_INFO } from '../../utils/constants'
+
+// Íconos institucionales
+import BarranquillaImg from '../../assets/convenios/barranquilla.png'
+import EducacionImg from '../../assets/convenios/educacion.png'
+import IcfesImg from '../../assets/convenios/icfes.png'
 
 function Footer() {
   return (
@@ -65,10 +69,41 @@ function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-8 pt-6 text-center">
-          <p className="text-base-100/80 text-sm">
-            2025 Gimnasio el Paraíso. Todos los derechos reservados. {/*PENDIENTE COLOCAR AÑO ACTUAL*/}
-          </p>
+        <div className="border-t border-white/10 mt-8 pt-6">
+          {/* Íconos institucionales */}
+          <div className="flex justify-center gap-6 flex-wrap mb-4">
+            <div className="text-center">
+              <img
+                src={BarranquillaImg}
+                alt="Secretaría de Educación de Barranquilla"
+                className="h-10 w-auto object-contain mx-auto mb-1"
+              />
+              <p className="text-xs text-base-100/60">Secretaría de Educación</p>
+            </div>
+            <div className="text-center">
+              <img
+                src={EducacionImg}
+                alt="Ministerio de Educación Colombia"
+                className="h-10 w-auto object-contain mx-auto mb-1"
+              />
+              <p className="text-xs text-base-100/60">Ministerio de Educación</p>
+            </div>
+            <div className="text-center">
+              <img
+                src={IcfesImg}
+                alt="ICFES"
+                className="h-10 w-auto object-contain mx-auto mb-1"
+              />
+              <p className="text-xs text-base-100/60">ICFES</p>
+            </div>
+          </div>
+          
+          {/* Copyright */}
+          <div className="text-center">
+            <p className="text-base-100/80 text-sm">
+              2025 Gimnasio el Paraíso. Todos los derechos reservados. {/*PENDIENTE COLOCAR AÑO ACTUAL*/}
+            </p>
+          </div>
         </div>
       </div>
     </footer>

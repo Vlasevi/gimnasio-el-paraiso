@@ -23,6 +23,10 @@ import Prescolar from '../assets/school/prescolar.jpg';
 import Primaria from '../assets/school/primaria.jpg';
 import Bachillerato from '../assets/school/bachillerato.jpg';
 
+// Licencias de Funcionamiento
+import LicenciaPreescolar from '../assets/licencias/Resolución001618_1998.pdf';
+import LicenciaPrimaria from '../assets/licencias/Resolución02323_2015.pdf';
+
 function Home() {
   const moments = [
     Moments1, Moments2, Moments3, Moments4, Moments5, Moments6, Moments7, Moments8, Moments9
@@ -182,6 +186,63 @@ function Home() {
                 </div>
                 <div className="card-actions justify-end">
                   <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Licencias de Funcionamiento */}
+          <div className="mt-16">
+            <h3 className="text-2xl md:text-3xl font-bold text-center text-primary mb-8 font-poppins">
+              Licencias de Funcionamiento
+            </h3>
+            <p className="text-center text-neutral/70 text-lg max-w-3xl mx-auto mb-8">
+              Contamos con todas las licencias y resoluciones otorgadas por la Secretaría de Educación de Barranquilla
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {/* Licencia Preescolar */}
+              <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BookOpen className="w-8 h-8 text-accent" />
+                </div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Preescolar</h4>
+                <p className="text-sm text-neutral/70 mb-4">Resolución 001618 de 1998</p>
+                <a 
+                  href={LicenciaPreescolar} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-sm btn-primary text-white hover:bg-accent transition-colors"
+                >
+                  Ver Licencia
+                </a>
+              </div>
+              
+              {/* Licencia Primaria */}
+              <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BookOpen className="w-8 h-8 text-accent" />
+                </div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Primaria</h4>
+                <p className="text-sm text-neutral/70 mb-4">Resolución 02323 de 2015</p>
+                <a 
+                  href={LicenciaPrimaria} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-sm btn-primary text-white hover:bg-accent transition-colors"
+                >
+                  Ver Licencia
+                </a>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BookOpen className="w-8 h-8 text-accent" />
+                </div>
+                <h4 className="text-lg font-semibold text-primary mb-2">Bachillerato</h4>
+                <p className="text-sm text-neutral/70 mb-4">Resolución 04219 de 2020</p>
+                <div className="btn btn-sm btn-disabled cursor-not-allowed">
+                  Próximamente
                 </div>
               </div>
             </div>

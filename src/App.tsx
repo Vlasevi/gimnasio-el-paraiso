@@ -5,6 +5,7 @@ import Admissions from './pages/Admissions'
 import Contact from './pages/Contact'
 import SchoolLife from './pages/SchoolLife'
 import Students from './pages/Students'
+import Calendario from './pages/Calendario'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path='/contact'    element={<Layout><Contact/></Layout>}/>
             <Route path='/schoollife' element={<Layout><SchoolLife/></Layout>}/>
             <Route path='/students'   element={<Layout><Students/></Layout>}/>
+            <Route path='/calendario' element={<Layout><Calendario/></Layout>}/>
           </Routes>
       </BrowserRouter>
     </>

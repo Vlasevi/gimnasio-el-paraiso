@@ -71,6 +71,9 @@ export default function Header() {
               <Link to='/schoollife' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/schoollife') ? 'text-accent font-bold' : ''}`}>Vida Escolar</Link>
             </li>
             <li>
+              <Link to='/calendario' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/calendario') ? 'text-accent font-bold' : ''}`}>Calendario</Link>
+            </li>
+            <li>
               <Link to='/contact' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/contact') ? 'text-accent font-bold' : ''}`}>Contacto</Link>
             </li>
           </ul>
@@ -121,6 +124,9 @@ export default function Header() {
             </li>
             <li>
               <Link to='/schoollife' className={`hover:text-accent transition-colors py-3 ${isActiveLink('/schoollife') ? 'text-accent font-bold' : ''}`} onClick={toggleMenu}>Vida Escolar</Link>
+            </li>
+            <li>
+              <Link to='/calendario' className={`hover:text-accent transition-colors py-3 ${isActiveLink('/calendario') ? 'text-accent font-bold' : ''}`} onClick={toggleMenu}>Calendario</Link>
             </li>
             <li>
               <Link to='/contact' className={`hover:text-accent transition-colors py-3 ${isActiveLink('/contact') ? 'text-accent font-bold' : ''}`} onClick={toggleMenu}>Contacto</Link>
