@@ -1,0 +1,270 @@
+/* Tema Sketchy para FullCalendar */
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+.sketchy-calendar {
+  font-family: 'Kalam', cursive;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Contenedor principal del calendario */
+.fc {
+  background: #ffffff;
+  border: 3px solid #3b4aa0;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(59, 74, 160, 0.15);
+  overflow: hidden;
+  position: relative;
+}
+
+.fc::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px dashed rgba(59, 74, 160, 0.3);
+  border-radius: 12px;
+  margin: 8px;
+  pointer-events: none;
+}
+
+/* Header del calendario */
+.fc-header-toolbar {
+  padding: 1rem;
+  background: linear-gradient(135deg, #3b4aa0 0%, #52b455 100%);
+  margin-bottom: 0 !important;
+}
+
+.fc-toolbar-title {
+  color: white !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  transform: rotate(-1deg);
+}
+
+/* Botones de navegación */
+.fc-button-primary {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border: 2px solid white !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0 0.25rem !important;
+  transition: all 0.3s ease !important;
+  transform: rotate(1deg);
+}
+
+.fc-button-primary:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  transform: rotate(-1deg) scale(1.05) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.fc-button-primary:focus {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Días de la semana */
+.fc-col-header {
+  background: #f8fafc;
+  border-bottom: 2px solid #3b4aa0;
+}
+
+.fc-col-header-cell {
+  padding: 0.75rem 0.5rem;
+  font-weight: 700;
+  color: #3b4aa0;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+}
+
+/* Celdas de días */
+.fc-daygrid-day {
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.fc-daygrid-day:hover {
+  background: rgba(59, 74, 160, 0.05);
+  transform: scale(1.02);
+}
+
+.fc-daygrid-day-number {
+  color: #64748b;
+  font-weight: 600;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Día actual */
+.today-cell {
+  background: linear-gradient(135deg, rgba(59, 74, 160, 0.1) 0%, rgba(82, 180, 85, 0.1) 100%) !important;
+  border: 2px solid #3b4aa0 !important;
+  position: relative;
+}
+
+.today-cell .fc-daygrid-day-number {
+  background: #3b4aa0;
+  color: white;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(59, 74, 160, 0.4);
+}
+
+/* Eventos */
+.fc-event {
+  border-radius: 6px !important;
+  border: none !important;
+  margin: 1px 2px !important;
+  padding: 2px 6px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.fc-event::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%),
+              linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%);
+  background-size: 8px 8px;
+  pointer-events: none;
+}
+
+.fc-event:hover {
+  transform: scale(1.05) rotate(1deg) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+  z-index: 10 !important;
+}
+
+.fc-event-title {
+  font-weight: 600 !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Más eventos link */
+.fc-more-link {
+  color: #3b4aa0 !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  padding: 2px 4px !important;
+  border-radius: 4px !important;
+  background: rgba(59, 74, 160, 0.1) !important;
+  transition: all 0.2s ease !important;
+}
+
+.fc-more-link:hover {
+  background: rgba(59, 74, 160, 0.2) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Tooltip personalizado */
+.calendar-tooltip {
+  background: white;
+  border: 2px solid #3b4aa0;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  z-index: 1000;
+  max-width: 250px;
+  font-family: 'Kalam', cursive;
+  transform-origin: bottom center;
+  animation: tooltipAppear 0.2s ease-out;
+}
+
+.calendar-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #3b4aa0;
+}
+
+.tooltip-content {
+  padding: 1rem;
+}
+
+.tooltip-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: #3b4aa0;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.2;
+}
+
+.tooltip-content p {
+  margin: 0.25rem 0;
+  color: #64748b;
+  font-size: 0.75rem;
+  line-height: 1.3;
+}
+
+@keyframes tooltipAppear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%) scale(1);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .fc-toolbar-title {
+    font-size: 1.2rem !important;
+  }
+  
+  .fc-button-primary {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  .fc-daygrid-day-number {
+    font-size: 0.75rem;
+  }
+  
+  .fc-event {
+    font-size: 0.7rem !important;
+    padding: 1px 4px !important;
+  }
+}
+
+/* Efectos sketchy adicionales */
+.sketchy-calendar .fc-scrollgrid {
+  border: none !important;
+}
+
+.sketchy-calendar .fc-scrollgrid-section > * {
+  border-color: #e2e8f0 !important;
+}
+
+/* Animaciones suaves */
+.fc-event, .fc-daygrid-day, .fc-button-primary {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}

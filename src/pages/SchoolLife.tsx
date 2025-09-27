@@ -20,7 +20,7 @@ function SchoolLife() {
       <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent pt-20 lg:pt-0">
         <img
           src={home}
-          alt="Nosotross"
+          alt="Vida Escolar"
           className="block max-w-full h-auto object-contain mx-auto"
         />
         <div className="absolute inset-0 bg-black/40"></div>

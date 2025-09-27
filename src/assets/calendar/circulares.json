@@ -1,0 +1,13 @@
+{
+  "circulares": [
+    {
+      "id": "circ-001",
+      "titulo": "Circular de Bienvenida 2025",
+      "fecha": "2025-01-15",
+      "tipo": "informativa",
+      "descripcion": "Información importante para el inicio del año escolar 2025",
+      "url": "#",
+      "activa": true
+    }
+  ]
+}

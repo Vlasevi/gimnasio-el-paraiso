@@ -23,8 +23,8 @@ function Footer() {
                 <p className="text-base-100/80">Educación de calidad desde {SCHOOL_INFO.founded}</p>
               </div>
             </div>
-            <p className="text-base-100/90 leading-relaxed mb-4">
-              Formamos seres húmano íntegros con excelencia académica, valores humanos y responsabilidad social.
+            <p className="text-base-100/90 leading-relaxed mb-4 max-w-md text-justify">
+              Formamos seres humanos íntegros con excelencia académica, valores humanos y responsabilidad social.
             </p>
             <div className="flex gap-4">
               <a href="https://www.instagram.com/gimpa.paraiso/" target="_blank" className="text-base-100/80 hover:text-accent transition-colors">
@@ -51,7 +51,7 @@ function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0" />
-                <p className="text-base-100/90 text-sm">{CONTACT_INFO.adress}</p>
+                <p className="text-base-100/90 text-sm">{CONTACT_INFO.address}</p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0" />
@@ -101,7 +101,7 @@ function Footer() {
           {/* Copyright */}
           <div className="text-center">
             <p className="text-base-100/80 text-sm">
-              2025 Gimnasio el Paraíso. Todos los derechos reservados. {/*PENDIENTE COLOCAR AÑO ACTUAL*/}
+              {new Date().getFullYear()} Gimnasio el Paraíso. Todos los derechos reservados.
             </p>
           </div>
         </div>

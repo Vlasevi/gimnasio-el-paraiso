@@ -6,6 +6,7 @@ import Contact from './pages/Contact'
 import SchoolLife from './pages/SchoolLife'
 import Students from './pages/Students'
 import Calendario from './pages/Calendario'
+import ScrollToTop from './components/ScrollToTop'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+          <ScrollToTop />
           <Routes> 
             <Route path='/'           element={<Layout><Home/></Layout>}/>
             <Route path='/about'      element={<Layout><About/></Layout>}/>

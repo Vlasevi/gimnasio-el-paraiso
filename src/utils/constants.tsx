@@ -3,7 +3,7 @@
 export const CONTACT_INFO = {
     phone: '+57 3014312924',
     email: 'gimnasioelparaiso@gimpa.edu.co',
-    adress : 'Carrera 74 # 80-123, Barranquilla, Colombia',
+    address : 'Carrera 74 # 80-123, Barranquilla, Colombia',
     whatsapp: '+57 3014312924',
     facebook : '',
     instagram : 'https://www.instagram.com/gimpa.paraiso'

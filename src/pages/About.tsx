@@ -156,7 +156,7 @@ function About() {
       <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent pt-20 lg:pt-0">
         <img
           src={Nosotros}
-          alt="Nosotross"
+          alt="Nosotros"
           className="block max-w-full h-auto object-contain mx-auto"
         />
         <div className="absolute inset-0 bg-black/40"></div>
@@ -269,19 +269,15 @@ function About() {
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
                     Solidaridad
                   </li>
-                                    <li className="flex items-center gap-2">
-                    <span className="w-2 h-2 bg-accent rounded-full"></span>
-                    Honestidad
-                  </li>
-                                    <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
                     Justicia
                   </li>
-                                    <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
                     Autonomía
                   </li>
-                                    <li className="flex items-center gap-2">
+                  <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
                     Integralidad
                   </li>
@@ -299,7 +295,7 @@ function About() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-accent rounded-full"></span>
-                    Justicia
+                    Perseverancia
                   </li>
                 </ul>
               </div>

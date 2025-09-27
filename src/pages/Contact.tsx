@@ -12,7 +12,7 @@ function Contact() {
       <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent pt-20 lg:pt-0">
         <img
           src={ContactImage}
-          alt="Nosotross"
+          alt="Nosotros"
           className="block max-w-full h-auto object-contain mx-auto"
         />
         <div className="absolute inset-0 bg-black/40"></div>
@@ -107,7 +107,7 @@ function Contact() {
                       <div>
                         <h3 className="font-semibold mb-1">Dirección</h3>
                         <p className="text-white/90">
-                          {CONTACT_INFO.adress}
+                          {CONTACT_INFO.address}
                         </p>
                       </div>
                     </div>

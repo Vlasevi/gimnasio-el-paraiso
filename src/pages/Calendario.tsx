@@ -1,11 +1,10 @@
-import { Calendar, Camera, Clock } from 'lucide-react'
+import { Calendar, Clock } from 'lucide-react'
 import { useState, useMemo, useEffect } from 'react'
 import calendar2025 from '../assets/calendar/calendar2025.json'
 import Portada from '../assets/home.jpg'
+import CalendarView from '../components/calendar/CalendarView'
 
 function Calendario() {
-  const [selectedMonth, setSelectedMonth] = useState<string>('todos')
-  const [searchTerm, setSearchTerm] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [animationKey, setAnimationKey] = useState(0)
 
@@ -67,17 +66,7 @@ function Calendario() {
       setAnimationKey(prev => prev + 1)
     }, 300)
     return () => clearTimeout(timer)
-  }, [searchTerm, selectedMonth])
-
-  const filteredEvents = useMemo(() => {
-    const events = processCalendarEvents()
-    return events.filter(event => {
-      const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase())
-      const matchesMonth = selectedMonth === 'todos' || 
-        event.startDate.getMonth() === parseInt(selectedMonth)
-      return matchesSearch && matchesMonth
-    })
-  }, [searchTerm, selectedMonth])
+  }, [])
 
   const upcomingEvents = useMemo(() => {
     const today = new Date()
@@ -118,40 +107,9 @@ function Calendario() {
               Mantente al día con todas las actividades y eventos importantes del año escolar 2025
             </p>
           </div>
-          {/* Filtros */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8 max-w-2xl mx-auto">
-            <div className="flex-1 transform transition-all duration-300 hover:scale-105">
-              <input
-                type="text"
-                placeholder="🔍 Buscar eventos..."
-                className="input input-bordered w-full focus:ring-2 focus:ring-accent transition-all duration-300"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            <select
-              className="select select-bordered w-full sm:w-auto focus:ring-2 focus:ring-accent transition-all duration-300 hover:scale-105"
-              value={selectedMonth}
-              onChange={(e) => setSelectedMonth(e.target.value)}
-            >
-              <option value="todos">📆 Todos los meses</option>
-              <option value="0">🌟 Enero</option>
-              <option value="1">💝 Febrero</option>
-              <option value="2">🌸 Marzo</option>
-              <option value="3">🌺 Abril</option>
-              <option value="4">🌻 Mayo</option>
-              <option value="5">☀️ Junio</option>
-              <option value="6">🎆 Julio</option>
-              <option value="7">🎨 Agosto</option>
-              <option value="8">🍂 Septiembre</option>
-              <option value="9">🎃 Octubre</option>
-              <option value="10">🦃 Noviembre</option>
-              <option value="11">🎄 Diciembre</option>
-            </select>
-          </div>
           {/* Próximos eventos destacados */}
           <div className="mb-12">
-            <h3 className="text-xl font-semibold text-primary mb-6 text-center animate-fade-in">
+            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center animate-fade-in font-poppins">
               ⭐ Próximos Eventos Destacados
             </h3>
             {isLoading ? (
@@ -191,84 +149,39 @@ function Calendario() {
           </div>
           {/* Lista completa de eventos */}
           <div>
-            <h3 className="text-xl font-semibold text-primary mb-6 text-center animate-fade-in">
+            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6 text-center animate-fade-in font-poppins">
               📋 Calendario Completo 2025
             </h3>
-            {isLoading ? (
-              <div className="flex justify-center items-center py-12">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="loading loading-spinner loading-lg text-accent"></div>
-                  <p className="text-neutral/60">Cargando eventos...</p>
-                </div>
+            <div className="grid lg:grid-cols-3 gap-8">
+              {/* Calendario Visual */}
+              <div className="lg:col-span-2">
+                <CalendarView 
+                  events={processCalendarEvents()}
+                  searchTerm=""
+                />
               </div>
-            ) : filteredEvents.length === 0 ? (
-              <div className="text-center py-8 animate-fade-in">
-                <Calendar className="w-16 h-16 text-neutral/40 mx-auto mb-4 animate-pulse" />
-                <p className="text-neutral/60">No se encontraron eventos que coincidan con los filtros.</p>
-                <p className="text-sm text-neutral/50 mt-2">Intenta cambiar los criterios de búsqueda</p>
-              </div>
-            ) : (
-              <div key={animationKey} className="grid gap-4 animate-fade-in">
-                {filteredEvents.map((event, index) => (
-                  <div 
-                    key={event.id} 
-                    className="card bg-white shadow-lg hover:shadow-xl transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1"
-                    style={{
-                      animationDelay: `${index * 50}ms`,
-                      animation: 'slideInLeft 0.6s ease-out forwards'
-                    }}
-                  >
-                    <div className="card-body p-6">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-2">
-                            <span className={`badge ${getEventTypeColor(event.type)} hover:scale-110 transition-transform`}>
-                              {event.type.replace('_', ' ')}
-                            </span>
-                            <div className="flex items-center gap-2 text-accent text-sm">
-                              <Calendar className="w-4 h-4 animate-pulse" />
-                              {formatDateRange(event.startDate, event.endDate)}
-                            </div>
-                          </div>
-                          <h4 className="text-lg font-semibold text-primary mb-1 hover:text-accent transition-colors cursor-pointer">
-                            {event.title}
-                          </h4>
-                          <p className="text-neutral/70 text-sm">
-                            {event.category === 'institucional' ? '🏫 Evento Institucional' : event.category}
-                          </p>
-                        </div>
-                        <div className="flex items-center gap-2 text-neutral/60">
-                          <Clock className="w-4 h-4 animate-spin" style={{animationDuration: '3s'}} />
-                          <span className="text-sm">
-                            {event.isAllDay ? '⏰ Todo el día' : '🕐 Horario específico'}
-                          </span>
-                        </div>
-                      </div>
+              
+              {/* Panel lateral para circulares */}
+              <div className="lg:col-span-1">
+                <div className="bg-white rounded-xl shadow-lg p-6 sticky top-4">
+                  <h4 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+                    📄 Circulares Recientes
+                  </h4>
+                  <div className="space-y-4">
+                    <div className="text-center py-8">
+                      <div className="text-4xl text-accent mb-4">📋</div>
+                      <p className="text-neutral/70 text-sm">
+                        Próximamente encontrarás aquí las circulares institucionales más recientes.
+                      </p>
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Circulares */}
-      <section className="py-16 bg-base-200">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
-            Circulares
-          </h2>
-          <div className="flex flex-col items-center justify-center min-h-[180px]">
-            <div className="bg-white rounded-xl shadow-lg p-8 text-center max-w-xl w-full animate-fade-in">
-              <p className="text-lg text-neutral mb-4">
-                Próximamente encontrarás aquí las circulares institucionales y comunicados importantes para la comunidad educativa.
-              </p>
-              <span className="inline-block text-4xl text-accent animate-bounce">📄</span>
             </div>
           </div>
         </div>
       </section>
+
     </div>
   )
 }
