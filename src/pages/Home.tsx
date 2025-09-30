@@ -25,6 +25,7 @@ import Bachillerato from '../assets/school/bachillerato.jpg';
 
 import LicenciaPreescolar from '../assets/licencias/Resolución001618_1998.pdf';
 import LicenciaPrimaria from '../assets/licencias/Resolución02323_2015.pdf';
+import LicenciaSecundaria from '../assets/licencias/Resolución04219_2020.pdf';
 
 function Home() {
   const moments = [
@@ -231,9 +232,14 @@ function Home() {
                 </div>
                 <h4 className="text-lg font-semibold text-primary mb-2">Bachillerato</h4>
                 <p className="text-sm text-neutral/70 mb-4">Resolución 04219 de 2020</p>
-                <div className="btn btn-sm btn-disabled cursor-not-allowed">
-                  Próximamente
-                </div>
+                <a 
+                  href={LicenciaSecundaria} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="btn btn-sm btn-primary text-white hover:bg-accent transition-colors"
+                >
+                  Ver Licencia
+                </a>
               </div>
             </div>
           </div>

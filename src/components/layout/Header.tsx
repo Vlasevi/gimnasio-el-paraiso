@@ -66,9 +66,9 @@ export default function Header() {
             <li>
               <Link to='/admissions' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/admissions') ? 'text-accent font-bold' : ''}`}>Admisiones</Link>
             </li>
-            <li>
+           {/* <li>
               <Link to='/schoollife' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/schoollife') ? 'text-accent font-bold' : ''}`}>Vida Escolar</Link>
-            </li>
+            </li>   */ }
             <li>
               <Link to='/calendario' className={`hover:text-accent transition-colors px-4 ${isActiveLink('/calendario') ? 'text-accent font-bold' : ''}`}>Calendario</Link>
             </li>

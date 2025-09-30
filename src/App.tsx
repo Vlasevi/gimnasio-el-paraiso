@@ -20,7 +20,7 @@ function App() {
             <Route path='/about'      element={<Layout><About/></Layout>}/>
             <Route path='/admissions' element={<Layout><Admissions/></Layout>}/>
             <Route path='/contact'    element={<Layout><Contact/></Layout>}/>
-            <Route path='/schoollife' element={<Layout><SchoolLife/></Layout>}/>
+          {/*  <Route path='/schoollife' element={<Layout><SchoolLife/></Layout>}/> */}
             <Route path='/students'   element={<Layout><Students/></Layout>}/>
             <Route path='/calendario' element={<Layout><Calendario/></Layout>}/>
           </Routes>
