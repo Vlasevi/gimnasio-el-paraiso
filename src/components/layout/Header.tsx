@@ -29,12 +29,12 @@ export default function Header() {
     };
 
     const onResize = () => {
-      updateNavStyle(); // Recalcular cuando cambie el tamaño
+      updateNavStyle();
     };
     
     window.addEventListener('scroll', updateNavStyle, { passive: true });
     window.addEventListener('resize', onResize);
-    updateNavStyle(); // Initialize on mount
+    updateNavStyle();
     
     return() => {
       window.removeEventListener('scroll', updateNavStyle);
@@ -55,7 +55,6 @@ export default function Header() {
           </Link>
         </div>
         
-        {/* Desktop Menu */}
         <div className='navbar-center hidden lg:flex'>
           <ul className={`menu menu-horizontal font-poppins font-semibold ${changeTextColor ? "text-base-100" : "text-base-100"}`}>
             <li>
@@ -80,12 +79,9 @@ export default function Header() {
         </div>
         
         <div className='navbar-end flex items-center gap-2'>
-          {/* User Portal */}
           <Link to='/students' className='hover:text-accent transition-colors text-base-100 p-2' aria-label='Portal del Estudiante'>
             <User className="w-5 h-5 md:w-6 md:h-6"/>
           </Link>
-          
-          {/* Mobile Menu Button */}
           <button 
             className="lg:hidden text-base-100 p-2"
             onClick={toggleMenu}
@@ -96,10 +92,8 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
       <div className="lg:hidden fixed inset-0 z-[60]">
-        {/* overlay clicable sin color para no romper el blur */}
         <div className="absolute inset-0" onClick={toggleMenu} />
 
         <div
@@ -110,7 +104,7 @@ export default function Header() {
             transition-colors duration-300
             border-white/10 shadow-lg
           "
-          style={navStyle} // <- misma opacidad que el navbar
+          style={navStyle}
         >
           <ul className='menu menu-vertical text-base-100 font-poppins font-semibold p-4'>
             <li>

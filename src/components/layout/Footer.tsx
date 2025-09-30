@@ -4,7 +4,6 @@ import logo from '../../assets/logo.png'
 import { SCHOOL_INFO } from '../../utils/constants'
 import { CONTACT_INFO } from '../../utils/constants'
 
-// Íconos institucionales
 import BarranquillaImg from '../../assets/convenios/barranquilla.png'
 import EducacionImg from '../../assets/convenios/educacion.png'
 import IcfesImg from '../../assets/convenios/icfes.png'
@@ -14,7 +13,6 @@ function Footer() {
     <footer className="bg-primary text-base-100">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Logo y Descripción */}
           <div className="col-span-1 lg:col-span-2">
             <div className="flex items-center gap-4 mb-4">
               <img src={logo} alt="Gimnasio el Paraíso" className="w-16 h-16" />
@@ -33,7 +31,6 @@ function Footer() {
             </div>
           </div>
 
-          {/* Enlaces Rápidos */}
           <div>
             <h4 className="text-lg font-semibold font-poppins mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2">
@@ -45,7 +42,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Información de Contacto */}
           <div>
             <h4 className="text-lg font-semibold font-poppins mb-4">Contacto</h4>
             <div className="space-y-3">
@@ -70,7 +66,6 @@ function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-8 pt-6">
-          {/* Íconos institucionales */}
           <div className="flex justify-center gap-6 flex-wrap mb-4">
             <div className="text-center">
               <img
@@ -98,7 +93,6 @@ function Footer() {
             </div>
           </div>
           
-          {/* Copyright */}
           <div className="text-center">
             <p className="text-base-100/80 text-sm">
               {new Date().getFullYear()} Gimnasio el Paraíso. Todos los derechos reservados.

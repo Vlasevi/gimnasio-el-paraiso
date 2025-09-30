@@ -23,7 +23,6 @@ import Prescolar from '../assets/school/prescolar.jpg';
 import Primaria from '../assets/school/primaria.jpg';
 import Bachillerato from '../assets/school/bachillerato.jpg';
 
-// Licencias de Funcionamiento
 import LicenciaPreescolar from '../assets/licencias/Resolución001618_1998.pdf';
 import LicenciaPrimaria from '../assets/licencias/Resolución02323_2015.pdf';
 
@@ -45,7 +44,6 @@ function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent pt-20 lg:pt-0">
         <img
           src={Portada}
@@ -74,7 +72,6 @@ function Home() {
 
 
 
-      {/* Quiénes Somos */}
       <section className="py-16 bg-base-200">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -114,7 +111,6 @@ function Home() {
         </div>
       </section>
 
-          {/* Nuestros Servicios */}
       <section className="py-16 bg-base-200">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
@@ -122,7 +118,6 @@ function Home() {
           </h2>
 
           <div className="grid lg:grid-cols-3 gap-8">
-          {/* Preescolar */}
             <div className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
               <figure className="px-6 pt-6">
                 <img src={Prescolar}
@@ -147,7 +142,6 @@ function Home() {
               </div>
             </div>
 
-            {/* Primaria */}
             <div className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
               <figure className="px-6 pt-6">
                 <img src={Primaria}
@@ -169,7 +163,6 @@ function Home() {
               </div>
             </div>
 
-            {/* Bachillerato */}
             <div className="card bg-white shadow-xl hover:shadow-2xl transition-shadow">
               <figure className="px-6 pt-6">
                 <img src={Bachillerato}
@@ -191,7 +184,6 @@ function Home() {
             </div>
           </div>
           
-          {/* Licencias de Funcionamiento */}
           <div className="mt-16">
             <h3 className="text-2xl md:text-3xl font-bold text-center text-primary mb-8 font-poppins">
               Licencias de Funcionamiento
@@ -201,7 +193,6 @@ function Home() {
             </p>
             
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {/* Licencia Preescolar */}
               <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
                 <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="w-8 h-8 text-accent" />
@@ -218,7 +209,6 @@ function Home() {
                 </a>
               </div>
               
-              {/* Licencia Primaria */}
               <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow">
                 <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BookOpen className="w-8 h-8 text-accent" />
@@ -250,7 +240,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Galería de Fotos de Estudiantes */}
       <section className="py-16 bg-base-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-neutral mb-4 font-poppins text-primary">
@@ -260,7 +249,6 @@ function Home() {
             Momentos especiales que reflejan el espíritu y la alegría de nuestra familia educativa
           </p>
 
-          {/* Grid minimalista de fotos */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 max-w-5xl mx-auto">
             {moments.map((img, index) => (
               <div 
@@ -274,7 +262,6 @@ function Home() {
                   className="w-full h-32 md:h-40 object-cover transition-opacity duration-300 group-hover:opacity-90"
                 />
                 
-                {/* Indicador sutil de imagen activa */}
                 {index === currentSlide && (
                   <div className="absolute top-2 right-2 w-2 h-2 bg-accent rounded-full"></div>
                 )}
@@ -282,7 +269,6 @@ function Home() {
             ))}
           </div>
 
-          {/* Indicadores minimalistas */}
           <div className="flex justify-center mt-8 space-x-1">
             {moments.map((_, index) => (
               <button

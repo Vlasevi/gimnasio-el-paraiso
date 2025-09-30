@@ -3,7 +3,7 @@ import Admissions_img from '../assets/home.jpg'
 import { CONTACT_INFO } from '../utils/constants'
 
 function Admissions() {
-  const whatsappMessage = encodeURIComponent("¡Hola! Estoy interesado(a) en el proceso de admisión para mi hijo(a) en el Gimnasio El Paraíso. Aquí está la información requerida:\n\n1. Nombre completo del estudiante: \n2. Edad del estudiante: \n3. Grado al que aspira ingresar: \n4. Colegio de procedencia: \n5. Motivo del cambio de institución: \n6. ¿Tiene algún diagnóstico, terapia o acompañamiento?: \n7. Nombre completo del acudiente: ");
+  const whatsappMessage = encodeURIComponent("¡Hola! Estoy interesado(a) en el proceso de admisión para mi hijo(a) en el Gimnasio El Paraíso.");
   const whatsappLink = `https://wa.me/${CONTACT_INFO.whatsapp.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
 
   const requiredInfo = [
@@ -39,12 +39,12 @@ function Admissions() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
       <section className="hero relative flex items-center justify-center overflow-hidden bg-transparent pt-20 lg:pt-0">
         <img
           src={Admissions_img}
           alt="Admisiones Gimnasio El Paraíso"
           className="block max-w-full h-auto object-contain mx-auto"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-black/40"></div>
 
@@ -58,7 +58,6 @@ function Admissions() {
         </div>
       </section>
 
-      {/* Bienvenida */}
       <section className="py-16 bg-base-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">

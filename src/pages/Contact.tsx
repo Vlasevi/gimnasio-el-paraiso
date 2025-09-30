@@ -7,6 +7,8 @@ import ContactImage from '../assets/home.jpg'
 function Contact() {
 
   const faqs = faqsData.faqs;
+  const whatsappMessage = encodeURIComponent("¡Hola! Estoy interesado(a) en el proceso de admisión para mi hijo(a) en el Gimnasio El Paraíso.");
+  const whatsappLink = `https://wa.me/${CONTACT_INFO.whatsapp.replace(/[^0-9]/g, '')}?text=${whatsappMessage}`;
 
   return (
     <div className="min-h-screen">
@@ -155,7 +157,7 @@ function Contact() {
                   <p className="mb-6">
                     Contacta a nuestro equipo de admisiones vía WhatsApp para resolver tus dudas al instante.
                   </p>
-                  <a href="https://wa.me/573001234567" 
+                  <a href={whatsappLink} 
                      target="_blank" 
                      rel="noopener noreferrer"
                      className="btn btn-accent btn-lg text-base-100">
