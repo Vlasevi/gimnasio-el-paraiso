@@ -138,7 +138,7 @@ function Home() {
                   <span className="badge badge-accent">Transición</span>
                 </div>
                 <div className="card-actions justify-end">
-                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
+                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Información de Preescolar</Link>
                 </div>
               </div>
             </div>
@@ -159,7 +159,7 @@ function Home() {
                   <span className="badge badge-accent">6º - 9º (Secundaria)</span>
                 </div>
                 <div className="card-actions justify-end">
-                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
+                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Información de Primaria y Secundaria</Link>
                 </div>
               </div>
             </div>
@@ -179,7 +179,7 @@ function Home() {
                   <span className="badge badge-accent">10º - 11º Grado</span>
                 </div>
                 <div className="card-actions justify-end">
-                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Más información</Link>
+                  <Link to="/admissions" className="btn btn-primary text-white border-primary hover:bg-accent hover:text-base-100 hover:border-accent font-semibold">Información de Bachillerato</Link>
                 </div>
               </div>
             </div>
