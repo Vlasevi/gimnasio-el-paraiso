@@ -2,7 +2,7 @@ import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react'
 import { SCHOOL_INFO, CONTACT_INFO } from '../utils/constants'
 import faqsData from '../assets/questions/questions.json'
 
-import ContactImage from '../assets/home.jpg'
+import ContactImage from '../assets/home.webp'
 
 function Contact() {
 

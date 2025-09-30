@@ -1,6 +1,6 @@
 import { Award, Target, Eye, Heart, BookOpen } from 'lucide-react'
 import { SCHOOL_INFO } from '../utils/constants';
-import Nosotros from '../assets/home.jpg'
+import Nosotros from '../assets/home.webp'
 
 import PsicologaImg from '../assets/work_team/psicologa.webp'
 import CoordinadoraImg from '../assets/work_team/coordinadora.webp'

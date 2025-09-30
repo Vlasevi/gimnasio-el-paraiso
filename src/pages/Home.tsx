@@ -2,12 +2,12 @@
 import { ChevronRight, Award, Users, BookOpen } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import Portada from '../assets/home.jpg'
+import Portada from '../assets/home.webp'
 import { SCHOOL_INFO } from '../utils/constants'
-import Home1 from '../assets/us/home1.jpg';
-import Home2 from '../assets/us/home2.jpg';
-import Home3 from '../assets/us/home3.jpg';
-import Home4 from '../assets/us/home4.jpg';
+import Home1 from '../assets/us/home1.webp';
+import Home2 from '../assets/us/home2.webp';
+import Home3 from '../assets/us/home3.webp';
+import Home4 from '../assets/us/home4.webp';
 
 import Moments1 from '../assets/moments/acc1.jpg';
 import Moments2 from '../assets/moments/acc2.jpg';

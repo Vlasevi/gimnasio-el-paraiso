@@ -1,6 +1,6 @@
 import { MapPin, Phone, Mail, Clock, Instagram } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.webp'
 import { SCHOOL_INFO } from '../../utils/constants'
 import { CONTACT_INFO } from '../../utils/constants'
 

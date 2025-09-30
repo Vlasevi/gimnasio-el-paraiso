@@ -1,4 +1,4 @@
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.webp'
 import { Link, useLocation } from 'react-router-dom'
 import { User, Menu, X } from 'lucide-react'
 import { useState, useEffect} from 'react'

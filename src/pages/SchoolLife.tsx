@@ -4,7 +4,7 @@ import Moments1 from '../assets/moments/acc1.jpg';
 import Moments2 from '../assets/moments/acc2.jpg';
 import Moments3 from '../assets/moments/acc3.jpg';
 import Moments4 from '../assets/moments/acc4.jpg';
-import home from '../assets/home.jpg'
+import home from '../assets/home.webp'
 
 function SchoolLife() {
   const years = [

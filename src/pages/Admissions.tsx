@@ -1,5 +1,5 @@
 import { MessageCircle, User, Calendar, CheckCircle, AlertCircle, GraduationCap, Users, Heart, Clock } from 'lucide-react'
-import Admissions_img from '../assets/home.jpg'
+import Admissions_img from '../assets/home.webp'
 import { CONTACT_INFO } from '../utils/constants'
 
 function Admissions() {

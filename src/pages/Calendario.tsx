@@ -1,7 +1,7 @@
 import { Calendar, Clock } from 'lucide-react'
 import { useState, useMemo, useEffect } from 'react'
 import calendar2025 from '../assets/calendar/calendar2025.json'
-import Portada from '../assets/home.jpg'
+import Portada from '../assets/home.webp'
 import CalendarView from '../components/calendar/CalendarView'
 
 function Calendario() {
