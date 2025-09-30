@@ -63,11 +63,11 @@ function Admissions() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 font-poppins">
-              ¡Bienvenido(a) al Gimnasio El Paraíso!
+              ¡Bienvenido(a) a Gimnasio El Paraíso!
             </h2>
             <p className="text-lg md:text-xl leading-relaxed text-neutral mb-8">
               Nos alegra que estés interesado(a) en hacer parte de nuestra comunidad educativa, 
-              que ofrece formación integral en <span className="font-semibold text-primary">preescolar, primaria, secundaria y media</span>.
+              que ofrece formación integral en <span className="font-semibold text-primary">preescolar, básica primaria, básica secundaria y media</span>.
             </p>
             <div className="bg-accent/10 border-l-4 border-accent p-6 rounded-r-lg">
               <p className="text-lg font-semibold text-primary mb-2">

@@ -1,0 +1,54 @@
+{
+  "faqs": [
+    {
+      "id": 1,
+      "question": "¿Cuál es la identidad religiosa del colegio y cómo se maneja la diversidad de credos?",
+      "answer": "Nuestro colegio profesa la fe católica y fundamenta en ella su propuesta educativa, sus valores y celebraciones. Sin embargo, acogemos con respeto y aprecio a estudiantes y familias de diferentes credos, siempre que reconozcan y respeten nuestra identidad institucional."
+    },
+    {
+      "id": 2,
+      "question": "¿Qué niveles académicos ofrece el colegio?",
+      "answer": "Contamos con formación desde educación inicial hasta bachillerato, brindando un acompañamiento integral en cada etapa del desarrollo académico y personal de nuestros estudiantes."
+    },
+    {
+      "id": 3,
+      "question": "¿Qué enfoque pedagógico tiene el colegio?",
+      "answer": "Promovemos un modelo educativo integral, que combina la excelencia académica con la formación en valores, el desarrollo de habilidades socioemocionales y el fortalecimiento de competencias para la vida."
+    },
+    {
+      "id": 4,
+      "question": "¿Cómo es el proceso de admisiones?",
+      "answer": "El proceso incluye la inscripción, entrevista con la familia, valoración del aspirante y socialización del proyecto educativo. Nuestro equipo de admisiones acompaña paso a paso a las familias en este proceso."
+    },
+    {
+      "id": 5,
+      "question": "¿El colegio cuenta con programas de inclusión?",
+      "answer": "Sí. Atendemos a la diversidad de nuestros estudiantes, ofreciendo estrategias pedagógicas diferenciadas y apoyos necesarios para garantizar el derecho a la educación de todos."
+    },
+    {
+      "id": 6,
+      "question": "¿Qué actividades extracurriculares se ofrecen?",
+      "answer": "Brindamos espacios de formación artística, deportiva, cultural y tecnológica, que complementan el desarrollo integral de los estudiantes y fortalecen sus talentos e intereses."
+    },
+    {
+      "id": 7,
+      "question": "¿Cuál es el horario escolar?",
+      "answer": "El horario varía según el nivel educativo. Generalmente, la jornada es en la mañana y la tarde, con opciones ajustadas para algunos programas según la edad y necesidad de los estudiantes."
+    },
+    {
+      "id": 8,
+      "question": "¿Cómo se fomenta la participación de los padres de familia?",
+      "answer": "Creemos que la familia es el primer núcleo formador. Por eso, promovemos la participación activa de los padres en actividades, encuentros formativos, escuela de padres y diferentes instancias del gobierno escolar."
+    },
+    {
+      "id": 9,
+      "question": "¿Qué diferencia al colegio de otras instituciones?",
+      "answer": "Nuestra identidad católica, el enfoque en valores, la calidad académica, los programas de inclusión y la atención cercana y personalizada a cada estudiante y su familia nos distinguen como una comunidad educativa integral."
+    },
+    {
+      "id": 10,
+      "question": "¿Dónde puedo obtener más información?",
+      "answer": "Las familias interesadas pueden contactarnos a través de nuestra página web, redes sociales, línea telefónica institucional o agendando una visita personalizada al colegio."
+    }
+  ]
+}

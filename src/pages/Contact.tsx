@@ -1,10 +1,12 @@
-
 import { MapPin, Phone, Mail, Clock, MessageCircle, Send } from 'lucide-react'
 import { SCHOOL_INFO, CONTACT_INFO } from '../utils/constants'
+import faqsData from '../assets/questions/questions.json'
 
 import ContactImage from '../assets/home.jpg'
 
 function Contact() {
+
+  const faqs = faqsData.faqs;
 
   return (
     <div className="min-h-screen">
@@ -204,58 +206,19 @@ function Contact() {
           
           <div className="max-w-3xl mx-auto">
             <div className="join join-vertical w-full">
-              <div className="collapse collapse-arrow join-item border border-base-300">
-                <input type="radio" name="faq-accordion" defaultChecked />
-                <div className="collapse-title text-xl font-medium text-primary">
-                  ¿Cuáles son los horarios de clases?
+              {faqs.map((faq, index) => (
+                <div key={faq.id} className="collapse collapse-arrow join-item border border-base-300">
+                  <input type="radio" name="faq-accordion" defaultChecked={index === 0} />
+                  <div className="collapse-title text-xl font-medium text-primary">
+                    {faq.question}
+                  </div>
+                  <div className="collapse-content">
+                    <p className="text-neutral">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
-                <div className="collapse-content">
-                  <p className="text-neutral">
-                    Preescolar: 7:30 AM - 2:00 PM<br />
-                    Primaria: 7:00 AM - 2:30 PM<br />
-                    Bachillerato: 6:50 AM - 3:00 PM
-                  </p>
-                </div>
-              </div>
-
-              <div className="collapse collapse-arrow join-item border border-base-300">
-                <input type="radio" name="faq-accordion" />
-                <div className="collapse-title text-xl font-medium text-primary">
-                  ¿Ofrecen servicio de transporte escolar?
-                </div>
-                <div className="collapse-content">
-                  <p className="text-neutral">
-                    Sí, contamos con servicio de transporte escolar que cubre las principales zonas de Bogotá. 
-                    El costo varía según la ubicación y se factura por separado de la pensión.
-                  </p>
-                </div>
-              </div>
-
-              <div className="collapse collapse-arrow join-item border border-base-300">
-                <input type="radio" name="faq-accordion" />
-                <div className="collapse-title text-xl font-medium text-primary">
-                  ¿Cuándo puedo agendar una visita al colegio?
-                </div>
-                <div className="collapse-content">
-                  <p className="text-neutral">
-                    Puedes agendar una visita llamando al teléfono de admisiones o enviando un WhatsApp. 
-                    Ofrecemos tours personalizados de lunes a viernes en horarios acordados previamente.
-                  </p>
-                </div>
-              </div>
-
-              <div className="collapse collapse-arrow join-item border border-base-300">
-                <input type="radio" name="faq-accordion" />
-                <div className="collapse-title text-xl font-medium text-primary">
-                  ¿Qué actividades extracurriculares ofrecen?
-                </div>
-                <div className="collapse-content">
-                  <p className="text-neutral">
-                    Ofrecemos una amplia gama de actividades: deportes (fútbol, voleibol, natación), 
-                    artes (música, teatro, danza), ciencias (robótica, astronomía) y idiomas adicionales.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -263,6 +226,5 @@ function Contact() {
     </div>
   )
 }
-
 
 export default Contact

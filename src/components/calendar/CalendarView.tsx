@@ -47,18 +47,20 @@ function CalendarView({ events, searchTerm }: CalendarViewProps) {
         event.title.toLowerCase().includes(searchTerm.toLowerCase())
       )
       .map(event => {
-        const startDate = event.startDate.toISOString().split('T')[0]
-        const endDate = event.endDate.toISOString().split('T')[0]
-        
-        // Para eventos de un solo día, no especificar 'end' para que FullCalendar 
-        // los muestre solo en el día de inicio
-        const isSingleDay = startDate === endDate
-        
+        // Clonar la fecha de fin para no mutar el objeto original
+        const endDate = new Date(event.endDate);
+        // Si el evento no es de todo el día, FullCalendar maneja la fecha de fin de forma exclusiva.
+        // Para eventos que duran varios días, es común querer que el último día se incluya visualmente.
+        // Añadir un día a la fecha de fin asegura que se renderice correctamente.
+        if (!event.isAllDay || event.startDate.getTime() !== event.endDate.getTime()) {
+            endDate.setDate(endDate.getDate() + 1);
+        }
+
         return {
           id: event.id,
           title: event.title,
-          start: startDate,
-          ...(isSingleDay ? {} : { end: endDate }),
+          start: event.startDate,
+          end: endDate,
           allDay: event.isAllDay,
           backgroundColor: getEventTypeColor(event.type),
           borderColor: getEventTypeColor(event.type),
@@ -76,7 +78,7 @@ function CalendarView({ events, searchTerm }: CalendarViewProps) {
   }
 
   return (
-    <div className="calendar-container sketchy-calendar">
+    <div className="calendar-container">
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
@@ -88,6 +90,9 @@ function CalendarView({ events, searchTerm }: CalendarViewProps) {
         events={fullCalendarEvents}
         height="auto"
         locale="es"
+        buttonText={{
+          today: 'Hoy'
+        }}
         firstDay={1} // Lunes como primer día
         fixedWeekCount={false} // No mostrar semanas adicionales
         showNonCurrentDates={false} // No mostrar fechas de otros meses

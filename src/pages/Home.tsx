@@ -80,7 +80,7 @@ function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 font-poppins">
-                ¿Quiénes Somos?
+                ¿Quiénes somos?
               </h2>
               <p className="text-lg leading-relaxed mb-6 text-neutral text-justify">
                 Gimnasio El Paraíso es una institución educativa que desde {SCHOOL_INFO.founded} se ha dedicado
@@ -304,7 +304,7 @@ function Home() {
       <section className="py-16 bg-base-100">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12 font-poppins">
-            ¿Qué nos Diferencia?
+            ¿Qué nos diferencia?
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

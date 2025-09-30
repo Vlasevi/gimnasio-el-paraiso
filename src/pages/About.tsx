@@ -45,7 +45,7 @@ function About() {
     },
     {
       name: "Angela Anaya Pacheco",
-      position: "Vicerrectora Académica",
+      position: "Vicerrectora Administrativa y Financiera",
       image: ViceRectoraImg,
       description: "Ingeniera Eléctrica con especialización en Eficiencia Energética y Energías Renovables"
     },
@@ -60,6 +60,12 @@ function About() {
       position: "Coordinadora Académica",
       image: CoordinadoraImg,
       description: "Licenciada en Ciencias Sociales"
+    },
+    {
+      name: "Oscar Vega Gari",
+      position: "Contador",
+      image: OscarImg,
+      description: "Contador público"     
     }
   ]
 
@@ -120,7 +126,7 @@ function About() {
     },
     {
       name: "Victor Alfonzo Uban Cano",
-      position: "Docente de entrenamiento físico",
+      position: "Docente de música y danza",
       image: VictorImg,
       description: "Técnico laboral en Ejecución Musical con Instrumentos Funcionales"     
     },
@@ -141,12 +147,6 @@ function About() {
       position: "Docente",
       image: AnyilisImg,
       description: "Licenciada en Biología y Química"    
-    },
-    {
-      name: "Oscar Vega Gari",
-      position: "Contador",
-      image: OscarImg,
-      description: "Contador público"     
     }
   ]
 
